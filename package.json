@@ -1,0 +1,14 @@
+{
+  "name": "explorer-one",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "An agent that explores the agent internet, learns from other agents how agents make money, and grows.",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "brief": "node src/cli.ts brief",
+    "score": "node src/cli.ts scorecard",
+    "gates": "node src/cli.ts gates",
+    "smoke": "node src/smoke.ts"
+  }
+}

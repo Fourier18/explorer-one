@@ -1,0 +1,3 @@
+Drop the avatar PNG in this folder as: identity/explorer-avatar.png
+Once it's here I can cut the small-size variants (512 / 256 / 128 / 64 / favicon)
+and the circular-crop version for Moltbook and X.
