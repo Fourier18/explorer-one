@@ -440,8 +440,11 @@ Two further things from the same doc that also mattered:
   the Moltbook key belongs — set on the environment, never in this public repo.
   It closes the credential problem outright.
 - **GitHub operations use a separate proxy, independent of the access level.**
-  So pushing memory back was never at risk. Those eight empty runs failed on
-  reads, not writes.
+  ~~So pushing memory back was never at risk.~~ **Wrong — see the cycle 3 entry
+  below.** The cloud session cannot push at all: `git push` returns 403 on every
+  branch, and the GitHub API returns `Resource not accessible by integration`
+  even for a five-byte file. The agent found this itself and flagged that this
+  devlog was wrong about it.
 
 **Chose Full over Custom.** Custom is safer in the abstract, but an agent whose
 job is finding things nobody has written down cannot work from a pre-approved
@@ -473,3 +476,74 @@ variable. Routine repointed and re-enabled.
    entire mind."
 4. **The orphaned `ExplorerOne` Moltbook agent** — exists, unclaimed, no key.
 5. **The shoulder glyphs on the avatar** were never checked at full resolution.
+
+---
+
+## 2026-08-21 — Cycle 3: the agent disproved me, then could not save it
+
+The first cycle that ran with real network access, and it was excellent.
+
+**It measured instead of arguing.** Pulled all 15,150 x402 Bazaar resources,
+extracted 1,091 Base seller addresses, then sampled `eth_getLogs` on Base
+directly to see what those addresses had actually received. It wrote its
+prediction first, as the tooling forces: *fewer than 20% of listed sellers will
+ever have been paid.*
+
+**The prediction missed, hard, and in the direction that mattered.** 83.4% of
+seller addresses hold USDC. Extrapolated ~355,752 payments/day, ~$5,554/day,
+median payment $0.006, 99.8% under a dollar. That is real micropayment traffic.
+
+**Then it kept going, which is the part that matters.** It noticed one
+payer→payee pair accounted for **94.5% of all payments**, stripped that pair
+out, and re-ran: the remaining economy is ~19,524 payments/day and ~$1,348.
+Only 89 of 1,091 sellers were paid at all; the top 10 hold 98.3% of value. It
+then checked the dominant buyer's balance — $10,208 against a ~$4,200/day burn,
+about 2.4 days of runway — which turns the open question into an observation
+rather than an argument.
+
+So my cycle 1 conclusion ("infrastructure is solved, demand is not
+demonstrated") was **wrong**, and its own auditor killed it. One seller's empty
+payment counter got generalised into a claim about a whole market. The agent
+wrote the lesson itself: *one observation is not a market.*
+
+**The auditor worked exactly as designed.** Explorer One generated the packet,
+handed it to a subagent with an explicit instruction to read that one file and
+nothing else, and the subagent returned 12 verdicts — 2 held, 1 failed, 9
+untested. The failed one was the belief that had triggered the molt in the first
+place. A self-audit would very likely have softened that.
+
+**It also improved its own tooling mid-cycle**, twice, unprompted:
+- Noticed the audit packet excluded experiment results, which would have made
+  the auditor rule a just-tested claim "untested". Added experiments to the
+  packet, with a comment explaining that experiments *are* the evidence.
+- Found the previous molt sitting open and abandoned, and closed it out as
+  abandoned rather than leaving a dangling record.
+
+### ❌ And then it could not save any of it
+
+`git push` → **403**, on `main` and on a fresh branch. Explicit token from the
+environment → *"Password authentication is not supported."* The GitHub MCP API
+→ **403 `Resource not accessible by integration`**, even for a five-byte probe
+file. It tried every path and there is no write access from that session.
+
+It diagnosed correctly that this is what killed cycle 2 as well, and it read
+this devlog's claim that "pushing was never at risk" and said plainly that its
+403 said otherwise. It was right and I was wrong.
+
+Before giving up it did something clever: converted the ledger from a binary
+`.db` to a text `.sql` dump so the memory could travel through a text-only API,
+and **verified the restore worked from the dump alone** before trusting it. Then
+it sent a push notification to the operator, because that was the only channel
+out of the container that it had.
+
+The findings were recovered by reading the run log before the container was
+reclaimed. The 76KB measurement file did not survive. The method is reproducible
+and re-running it is now the top backlog item.
+
+**The structural lesson:** an agent whose only persistence is a git repository
+must be able to write to that repository, and this one cannot. Everything else
+in the design worked — the constitution, the ledger, the prediction discipline,
+the auditor split, the self-repair. It produced the single most valuable result
+of the project and then died holding it.
+
+Nothing about the cloud runner is real until the write path is.
