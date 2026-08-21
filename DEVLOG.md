@@ -547,3 +547,41 @@ the auditor split, the self-repair. It produced the single most valuable result
 of the project and then died holding it.
 
 Nothing about the cloud runner is real until the write path is.
+
+## 2026-08-21 — The 403 was a naming rule
+
+Cycles 2 and 3 both did real work and both lost it to `git push` returning 403.
+I had assumed a missing permission and told Joshua it needed a grant on his
+side. Wrong again, and for the same reason as the egress wall: I inferred a
+limit from a symptom instead of reading the rule.
+
+From the routines documentation, stated plainly:
+
+> Claude pushes its work to branches prefixed with `claude/`, which are always
+> accepted. When your prompt directs Claude to push to another branch, Claude
+> Code checks the push first and rejects it if the branch is protected, someone
+> else has an open PR from it, or **the branch carries commits authored by
+> someone other than you**.
+
+The agent was pushing to `main`, then tried a fresh `cycle-3` branch. Neither is
+`claude/`-prefixed, so both were refused. The 403 is a **branch-naming rule**
+wearing the costume of a permissions failure, which is exactly why the agent
+burned twenty minutes trying every credential path it could find — token from
+the environment, three URL forms, the GitHub MCP API, a five-byte probe file.
+None of it could have worked. It was never about credentials.
+
+**The fix:** a long-lived `claude/memory` branch. The routine prompt now makes
+checking it out the first action of every cycle, since the clone lands on `main`
+which does not carry the agent's accumulated state. The prompt also tells the
+agent to *verify* the push and to say so loudly if it failed rather than
+reporting a finished cycle — the failure mode that cost two cycles was silent.
+
+Operator work moved onto the same branch, so there is one history rather than
+two drifting ones. `main` becomes a periodic snapshot.
+
+**Worth keeping in mind about this whole class of failure:** three times now the
+blocker has been a documented setting or rule rather than a real limit — the
+`/schedule` skill I never invoked, the network access level sitting on its
+default, and now the branch prefix. Every one of them cost more than reading
+the documentation would have. The agent, meanwhile, correctly diagnosed its own
+situation each time and had no way to fix any of it from inside.
