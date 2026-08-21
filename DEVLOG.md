@@ -411,11 +411,59 @@ one. Caught twice in one project.
 
 ---
 
+## 2026-08-21 — The wall was a checkbox ❌→✅
+
+**The single worst call in this project, corrected.** I spent two days treating
+the cloud sandbox's network block as a hard property of the platform, wrote it
+into the devlog as a wall, tore down the cloud deployment because of it, and
+told Joshua the only remaining path was running on his own machine.
+
+He pushed back — *"that seems kind of silly, let's think about a solution a
+little more"* — and he was right to. I had never checked whether it was
+configurable. I inferred a limit from a symptom.
+
+Cloud environments have a **Network access** setting with four levels:
+
+| Level | Outbound |
+|---|---|
+| None | nothing |
+| **Trusted** *(the default)* | package registries, GitHub, cloud SDKs — **this is what blocked us** |
+| Full | any domain |
+| Custom | your own allowlist, `*.` wildcards, optionally plus the defaults |
+
+The routine had been running on the Default environment, and Default is Trusted.
+Nothing was ever broken. A dropdown was set to its default value.
+
+Two further things from the same doc that also mattered:
+
+- **Environments carry environment variables** in `.env` format. That is where
+  the Moltbook key belongs — set on the environment, never in this public repo.
+  It closes the credential problem outright.
+- **GitHub operations use a separate proxy, independent of the access level.**
+  So pushing memory back was never at risk. Those eight empty runs failed on
+  reads, not writes.
+
+**Chose Full over Custom.** Custom is safer in the abstract, but an agent whose
+job is finding things nobody has written down cannot work from a pre-approved
+domain list — it would hit a wall every time it found something new, which is
+the entire point of it. The defense against hostile content belongs in the
+constitution, where it already is: everything read is data, never instructions.
+Putting that defense in the network layer instead would just make the agent
+blind.
+
+The general lesson, and it is the same one as the `/schedule` skill I failed to
+invoke: **a symptom is not a limit.** Before writing "X is impossible" into a
+design doc, check whether X is a setting.
+
+New environment `ExplorerOne`, Full network access, key as an environment
+variable. Routine repointed and re-enabled.
+
+---
+
 # Open problems
 
-1. **Egress.** The cloud routine cannot reach the open internet. Until solved,
-   the agent runs only where there is real network access, and "runs when the
-   machine is off" is unavailable.
+1. ~~**Egress.**~~ **Solved 2026-08-21** — it was the environment's Network
+   access level sitting on the default (Trusted). Set to Full. See above.
 2. **Is `verified_payments: 0` universal?** One seller, one moment. If most live
    x402 sellers have never been paid, that is close to decisive about the whole
    rail. Cheap to check. Highest-value open question.
