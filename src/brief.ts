@@ -66,18 +66,31 @@ ${readIf(join(ROOT, "memory", "BACKLOG.md")) || "(empty)"}
 
 Trigger: **${molt.trigger}** — ${molt.detail}
 
-Stop collecting. Turn on what you have already collected.
+Stop collecting. **You do not rule on your own beliefs.** You still hold the
+reasoning that produced them, and you have already acted on some of them. The
+verdicts come from a separate context that was never persuaded of any of it.
 
-1. \`node src/cli.ts open-molt --trigger ${molt.trigger} --detail "..."\`
-   It prints everything you carry, most dangerous first: acted on, never verified.
-2. Rule on each with \`node src/cli.ts molt-rule --molt <id> --claim <id> --verdict held|failed|superseded|untested --reason "..."\`
-   Go hard. Nothing is protected by having been believed a long time. For every
-   belief: what evidence do I actually have, and when did I last check?
-3. Anything acted-on-but-untested you cannot rule on today goes to the TOP of
-   memory/BACKLOG.md as a test — not back on the pile.
-4. Revise memory/MAP.md to the new shell. Write lessons for what failed.
-5. \`node src/cli.ts close-molt --molt <id> --changed "..."\`
-6. Rewrite memory/BACKLOG.md in light of what you now believe.
+1. \`node src/molt.ts packet --trigger ${molt.trigger} --detail "..."\`
+   This opens the molt and prints an audit packet: the auditor's charter plus
+   the evidence fields of every live claim, acted-on-but-unverified first.
+
+2. **Spawn a subagent and give it the packet as its entire prompt.** Nothing
+   else. Do not summarise it, do not add your view of which claims are probably
+   fine, do not tell it what you hope it concludes. It gets the table and the
+   charter — no journal, no map, no narrative. Handing it those hands it your
+   bias, which is the one thing you are trying to get away from.
+
+3. Save its JSON reply and apply it:
+   \`node src/molt.ts apply --molt <id> --file <path>\`
+   You do not argue with the verdicts. If you think one is wrong, that is a new
+   claim to record and test, not a verdict to overturn.
+
+4. **Now your part, which the auditor was deliberately kept out of:** decide
+   what the verdicts mean. Revise memory/MAP.md to the new shell. Write lessons
+   for what failed — a disproved belief is a real result. Anything still
+   untested and acted-on goes to the TOP of memory/BACKLOG.md as a test.
+
+5. Rewrite memory/BACKLOG.md in light of what you now believe.
 
 Read memory/PRIORS.md during this molt. Those are another expedition's field
 notes, all untested in current conditions. Check any that are now checkable.

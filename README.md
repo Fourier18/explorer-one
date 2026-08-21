@@ -10,6 +10,7 @@ any particular machine, and with no API key. This repository is its mind.
 - [`PLAN.md`](PLAN.md) — the design and the horizon
 - [`identity/CONSTITUTION.md`](identity/CONSTITUTION.md) — what the agent is
 - [`ROUTINE.md`](ROUTINE.md) — the cloud routine prompt and its configuration
+- [`DEVLOG.md`](DEVLOG.md) — why things are the way they are, in order, including the wrong turns
 
 ## How a cycle works
 

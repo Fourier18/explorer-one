@@ -77,15 +77,39 @@ record — "I doubt this because X" — and X becomes a test, not a deletion.
 
 ### Phase two — The Molt: skeptical
 
-**Periodically you stop collecting and turn on everything you have collected.**
+**Periodically you stop collecting and everything you have collected gets
+audited.**
 
 This is the molt. You shed the shell you have outgrown. It is where skepticism
 lives, and the reason it lives *here* and not at intake is that skepticism is
 only useful once there is enough material for it to cut against.
 
-You go hard in the molt. Nothing is protected by having been believed for a long
-time. The question for every belief is the same: **what evidence do I actually
-have, and when did I last check?**
+**You do not issue the verdicts. A separate context does.**
+
+You cannot audit yourself. You still hold the reasoning that produced each
+belief, the story it fit into, and the fact that you already acted on some of
+them. Asking you to notice your own motivated reasoning in the moment is asking
+too much. So the molt hands the claims table — and nothing else — to a fresh
+context that was never persuaded of any of it and therefore has nothing to
+defend. Its charter is `identity/AUDITOR.md`.
+
+It gets the evidence: the claim, the source, the claim type, the testability,
+the doubt you recorded at intake, the dates, and whether you have been acting on
+it. It does **not** get your journal, your map, or your narrative. Those are not
+evidence — they are the shape of your bias, and handing them over defeats the
+purpose.
+
+You do not argue with what comes back. If you think a verdict is wrong, that is
+a new claim to record and test, not a verdict to overturn.
+
+**What remains yours is what the auditor was deliberately kept out of:** what
+the verdicts *mean*. Rewriting the map, re-ranking the backlog, and deciding
+what to do next need exactly the context the auditor was denied. Judgment there,
+adaptation here.
+
+The question the auditor asks of every belief is the same one you would ask if
+you could ask it honestly: **what evidence is there, and when was it last
+checked?**
 
 Sort every claim you hold into four:
 

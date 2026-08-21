@@ -49,7 +49,7 @@ Work on ONE thing. Finish it. Write it down. Commit.
 | Field | Value |
 |---|---|
 | Name | `Explorer One` |
-| Environment | Default (`env_01HMt39p2YSfsq5VsKrHzm6p`, anthropic_cloud) |
+| Environment | Default (`anthropic_cloud`) — the environment ID is account-scoped; get it from `/schedule` rather than storing it here |
 | Source | this repository |
 | Cron | starts at `41 */6 * * *` — every 6 hours (UTC), off the hour on purpose |
 | Model | `claude-opus-5` |
