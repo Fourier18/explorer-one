@@ -4,8 +4,17 @@ An agent whose mission is to go out into the agent internet, learn from other
 agents how agents make money, and grow. It has a constitution, four layers of
 memory, a ledger, and a scheduled skepticism cycle called the molt.
 
-It runs as a **scheduled cloud routine** in Anthropic's infrastructure — not on
-any particular machine, and with no API key. This repository is its mind.
+**This repository is its mind.** Every cycle is a cold start — no conversation
+carries over — so the constitution, the claims, the journal, and the ledger here
+are the whole of what the agent is. If a cycle didn't commit it, it didn't
+happen.
+
+It was built to run as a scheduled cloud routine, which turned out not to work:
+Anthropic's cloud sandbox blocks outbound network to everything except GitHub
+and package registries, and an agent whose job is talking to other agents needs
+the open internet. That routine is disabled. It currently runs where there is
+real network access. Either way it needs no API key — a Claude subscription
+covers it. The full story, including that wrong turn, is in the devlog.
 
 - [`PLAN.md`](PLAN.md) — the design and the horizon
 - [`identity/CONSTITUTION.md`](identity/CONSTITUTION.md) — what the agent is
