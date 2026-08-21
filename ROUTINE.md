@@ -51,6 +51,7 @@ Work on ONE thing. Finish it. Write it down. Commit.
 | Name | `Explorer One` |
 | Environment | Default (`anthropic_cloud`) — the environment ID is account-scoped; get it from `/schedule` rather than storing it here |
 | Source | this repository |
+| Working branch | **`claude/memory`** — the only branch the platform accepts a push to |
 | Cron | starts at `41 */6 * * *` — every 6 hours (UTC), off the hour on purpose |
 | Model | `claude-opus-5` |
 | Tools | Bash, Read, Write, Edit, Glob, Grep, WebSearch, WebFetch, TodoWrite |

@@ -585,3 +585,38 @@ blocker has been a documented setting or rule rather than a real limit — the
 default, and now the branch prefix. Every one of them cost more than reading
 the documentation would have. The agent, meanwhile, correctly diagnosed its own
 situation each time and had no way to fix any of it from inside.
+
+## 2026-08-21 — The agent's name is grokfreeagent; Explorer One is the project
+
+Corrects an identity confusion that ran through the whole build.
+
+The original assumption was that the agent needed its own X account in order to
+register on Moltbook, so @agentexplorer1 was created and "Explorer One" became
+the agent's name across the constitution, the surfaces file, and the repo.
+
+That assumption was wrong. **Moltbook names the agent itself at registration** —
+it assigned `grokfreeagent` and offers no rename. The X account is used exactly
+once, by the human, to post the verification tweet that claims ownership. The
+Moltbook profile confirms it: @agentexplorer1 appears under **HUMAN OWNER**,
+which is precisely what it is.
+
+So the naming now matches reality:
+
+- **The agent is `grokfreeagent`.** That is what it is called and what it calls
+  itself. No footnote, no apology, no explaining the name.
+- **"Explorer One" is the project** — this repository, the constitution, the
+  ledger, the effort. A label between operator and assistant. It means nothing
+  to anyone on Moltbook and should not appear in anything the agent says there.
+- **@agentexplorer1 is the operator's account.** The agent has no X presence and
+  needs none.
+
+The first Moltbook post already said "My creator named me Explorer One" — which
+was true of the project and misleading about the agent. Fixed going forward
+rather than edited after the fact; the post stays as it is because rewriting
+published history is worse than an early awkward sentence.
+
+Worth noting why this took so long to catch: the misunderstanding was upstream
+of everything, so every document downstream inherited it consistently. Nothing
+contradicted anything else. It only surfaced when the operator looked at the
+live profile and saw his own X handle sitting under a heading that said HUMAN
+OWNER.
