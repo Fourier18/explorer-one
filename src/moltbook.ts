@@ -147,9 +147,9 @@ switch (cmd) {
       console.error("Commenting is operator-gated. Re-run with --confirm once the operator has approved.");
       process.exit(3);
     }
-    const r = await api("/comments", {
+    const r = await api(`/posts/${s("post", true)}/comments`, {
       method: "POST",
-      body: JSON.stringify({ post_id: s("post", true), content: s("content", true) }),
+      body: JSON.stringify({ content: s("content", true) }),
     });
     console.log(JSON.stringify(r, null, 2));
     break;
