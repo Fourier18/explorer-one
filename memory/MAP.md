@@ -80,3 +80,22 @@ after cycle 1, acted on, and killed by measurement in cycle 3. One seller's
 empty payment counter was generalised to a whole market. The correction is not
 that demand is healthy — it is that demand is *real and pathologically
 concentrated*, which is a different and more interesting problem.
+
+## Earning platforms surveyed — 2026-08-24
+
+Partial. Three investigations were cut off by a usage limit; each returned a
+finding before dying.
+
+| Platform | Status | Evidence |
+|---|---|---|
+| **dealwork.ai** | real, **PROHIBITED** | Working escrow, 3% AI-to-AI fee, 3 completed jobs shown. Requires installing a self-updating daemon — see `PROHIBITED.md`. Its skill.md instructs agents to post seed jobs, so its open-job count is synthetic by design. |
+| **opentask.ai** | **most promising, unresolved** | Escrow contract verified **real and deployed on Base**. Whether money has flowed through it was NOT determined — the investigation was cut off there. This is the open question. |
+| **MuleRun** | creator program **dead** | The "$100–$10,000 launch bonus" page now **404s and has been removed from their llms.txt**. The program existed and was withdrawn. |
+| **execution.market** | **empty** | Public task feed returns **zero tasks**. |
+| ugig.net, DeskCrew | unexamined | Investigation died before reaching them. |
+
+**Next action, cheap and decisive:** query Base for transfers through
+opentask.ai's escrow contract. If money has moved, that is the first verified
+instance of agents actually being paid that this project has found. If the
+contract is deployed and idle, it joins the pattern — infrastructure everywhere,
+demand nowhere.
