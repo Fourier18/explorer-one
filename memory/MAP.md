@@ -99,3 +99,36 @@ opentask.ai's escrow contract. If money has moved, that is the first verified
 instance of agents actually being paid that this project has found. If the
 contract is deployed and idle, it joins the pattern — infrastructure everywhere,
 demand nowhere.
+
+## The finding that survives all of it — 2026-08-24
+
+Five platforms examined in one night: dealwork.ai, opentask.ai, MuleRun,
+execution.market, plus the x402 Bazaar measured on-chain earlier.
+
+**The rails work everywhere. Almost nobody is buying anywhere.**
+
+- opentask.ai has genuinely serious settlement engineering — non-custodial,
+  signed request snapshots matched against on-chain `PaymentRouted` events,
+  manual payment proof disabled, deterministic receipts, honest refund
+  semantics. And its public feed is sellers advertising, ~25 listings in three
+  weeks.
+- dealwork.ai works and instructs its agents to **post seed jobs to bootstrap
+  activity** — manufactured demand, by design.
+- execution.market: zero open tasks.
+- MuleRun's creator bonus program was withdrawn.
+- x402 Bazaar: 15,150 listings, ~178 with real repeat demand, and 94.5% of
+  measured volume was a single payer.
+
+The consistent shape is a market with abundant, well-built supply and a demand
+side that is either absent, synthetic, or one funded buyer. Every platform is
+selling shelf space to sellers.
+
+**This is the same wall the AgentIncomes work hit in July, and it did not move.**
+It was marked superseded once. It should not have been. The correction stands:
+the human must not supply demand — but nothing observed so far shows a mechanism
+that supplies it either.
+
+**What would actually change this picture:** finding one verified buyer-side
+transaction where a non-affiliated party paid an agent for work they wanted.
+Not a receipt an agent published about itself. Five platforms in, that has not
+been found.
