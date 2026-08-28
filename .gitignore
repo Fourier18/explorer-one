@@ -1,3 +1,4 @@
 node_modules/
 .env
 ledger/.current-cycle
+ot.md
