@@ -131,34 +131,17 @@ export interface MoltCheck {
 }
 
 export function checkMoltDue(): MoltCheck {
-  const lastMolt = one<{ id: number; cycle_id: number | null }>(
-    `SELECT id, cycle_id FROM molts ORDER BY id DESC LIMIT 1`,
-  );
-  const totalCycles =
-    one<{ n: number }>(`SELECT COUNT(*) AS n FROM cycles`)?.n ?? 0;
-  const sinceMolt = lastMolt?.cycle_id
-    ? totalCycles - lastMolt.cycle_id
-    : totalCycles;
+  // Rolling review, per constitution §III: scrutiny is continuous and partial.
+  // Each cycle audits whatever has come due — usually a handful, never the
+  // whole table. Openness and skepticism alternate on a short beat instead of
+  // being separate seasons of life.
+  const nDue = one<{ n: number }>(
+    `SELECT COUNT(*) AS n FROM claims
+      WHERE shed_at IS NULL AND review_due_at IS NOT NULL
+        AND review_due_at <= datetime('now')`,
+  )?.n ?? 0;
 
-  if (sinceMolt >= 20) {
-    return {
-      due: true,
-      trigger: "scheduled",
-      detail: `${sinceMolt} cycles since the last molt (threshold 20).`,
-    };
-  }
-
-  const drift = one<{ untested: number | null; resolved: number | null; ratio: number | null }>(
-    `SELECT * FROM v_drift`,
-  );
-  if (drift?.ratio !== null && drift?.ratio !== undefined && drift.ratio > 3 && (drift.untested ?? 0) >= 15) {
-    return {
-      due: true,
-      trigger: "drift",
-      detail: `${drift.untested} untested claims against ${drift.resolved} resolved (ratio ${drift.ratio.toFixed(1)}). Collecting without digesting.`,
-    };
-  }
-
+  // Surprise jumps the queue: audit now, whatever else was scheduled.
   const surprise = one<{ id: number; surprise: string }>(
     `SELECT id, surprise FROM cycles
       WHERE surprise IS NOT NULL AND surprise <> ''
@@ -173,7 +156,40 @@ export function checkMoltDue(): MoltCheck {
     };
   }
 
+  // Drift — inhaling without exhaling.
+  const drift = one<{ untested: number | null; resolved: number | null; ratio: number | null }>(
+    `SELECT * FROM v_drift`,
+  );
+  if (drift?.ratio != null && drift.ratio > 3 && (drift.untested ?? 0) >= 15) {
+    return {
+      due: true,
+      trigger: "drift",
+      detail: `${drift.untested} untested against ${drift.resolved} resolved. Collecting without digesting.`,
+    };
+  }
+
+  if (nDue > 0) {
+    return {
+      due: true,
+      trigger: "scheduled",
+      detail: `${nDue} claim(s) have come due for review. Audit those, then go back to exploring — this is a partial review, not a full stop.`,
+    };
+  }
+
   return { due: false, trigger: null, detail: "" };
+}
+
+/** The rolling review queue — claims whose review date has arrived. */
+export function dueForReview() {
+  return all(
+    `SELECT c.id AS claim_id, c.claim, c.claim_type, c.status, c.acted_on,
+            c.recorded_at, c.review_due_at, c.testability, c.doubt,
+            s.handle AS source, s.track_record
+       FROM claims c LEFT JOIN sources s ON s.id = c.source_id
+      WHERE c.shed_at IS NULL AND c.review_due_at IS NOT NULL
+        AND c.review_due_at <= datetime('now')
+      ORDER BY c.acted_on DESC, c.review_due_at`,
+  );
 }
 
 // ---------------------------------------------------------------------------

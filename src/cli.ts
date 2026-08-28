@@ -85,9 +85,12 @@ case "record-claim": {
   );
   const id = insert(
     `INSERT INTO claims (recorded_at, cycle_id, source_id, claim, claim_type,
-       testability, doubt, acted_on) VALUES (?,?,?,?,?,?,?,?)`,
+       testability, doubt, acted_on, review_due_at)
+     VALUES (?,?,?,?,?,?,?,?, datetime('now', ?))`,
     now(), cycleId(), sourceId, str("claim", true), str("type", true),
     str("testability") || null, str("doubt") || null, bool("acted-on") ? 1 : 0,
+    // Acting on something is a bet; bets get checked soon. Carried claims wait.
+    bool("acted-on") ? "+2 days" : "+14 days",
   );
   out(`claim #${id} recorded as untested. Only a molt can rule on it.`);
   break;
@@ -151,11 +154,14 @@ case "molt-rule": {
   run(`UPDATE claims SET status=?, last_checked_at=?, molt_id=?,
          shed_at = CASE WHEN ? THEN ? ELSE shed_at END,
          shed_reason = CASE WHEN ? THEN ? ELSE shed_reason END,
-         superseded_by = COALESCE(?, superseded_by)
+         superseded_by = COALESCE(?, superseded_by),
+         review_due_at = CASE WHEN ? = 'held' THEN datetime('now','+30 days')
+                              WHEN ? = 'untested' THEN datetime('now','+3 days')
+                              ELSE review_due_at END
        WHERE id=?`,
     verdict, now(), num("molt", true),
     shed ? 1 : 0, now(), shed ? 1 : 0, str("reason", true),
-    num("superseded-by"), num("claim", true));
+    num("superseded-by"), verdict, verdict, num("claim", true));
   out(`claim #${str("claim")} → ${verdict}${shed ? " (shed — archived, not deleted)" : ""}`);
   break;
 }

@@ -72,6 +72,10 @@ CREATE TABLE claims (
     CHECK (status IN ('untested','held','failed','superseded')),
   acted_on        INTEGER NOT NULL DEFAULT 0,  -- untested + acted_on = danger
   last_checked_at TEXT,
+  -- Rolling review: every claim carries its own next-review date, set at intake.
+  -- Acted-on claims come due fast (a bet gets checked soon); carried claims come
+  -- due slowly. Scrutiny is continuous and partial, never a single big audit.
+  review_due_at   TEXT,
 
   shed_at         TEXT,                 -- molted shells are archived, never gone
   shed_reason     TEXT,

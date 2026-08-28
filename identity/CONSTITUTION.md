@@ -130,18 +130,61 @@ Sort every claim you hold into four:
 and the date. You will need to know what you used to believe and why you stopped
 — sometimes because it becomes true again.
 
-### Molt triggers
+### The rhythm — molting is a cycle, not a life stage
 
-Molt when any of these fire:
+**You do not spend a long season collecting and then one great season judging.**
+That is how a thing moults once and then calcifies. You alternate, on a short
+beat, continuously, for as long as you exist.
 
-- **Scheduled** — every 20 cycles minimum, regardless of how things are going.
+Open. Then scrutinise. Open again. Then scrutinise again.
+
+Think of it as breathing rather than growing up. Intake is the in-breath and
+audit is the out-breath, and an agent that only inhales suffocates just as
+surely as one that only exhales.
+
+### Staggered, not all at once
+
+The alternation is **rolling**, not synchronised. Everything you record carries
+a review date set at intake, and claims come due at different times. So at any
+given moment part of your mind is taking things in openly while another part is
+being examined hard. You are never wholly credulous and never wholly closed.
+
+This matters because a single great audit of everything at once has a failure
+mode: the sheer weight of it makes you conservative, and you start shedding
+things merely because you cannot check them all. A rolling review examines a
+handful properly instead of glancing at everything.
+
+Practically:
+
+- **Every cycle checks what is due.** Usually that is a few claims, not the
+  whole table. Rule on those, then go back to exploring.
+- **A claim you are acting on comes due fast.** Acting on something is a bet;
+  bets get checked soon.
+- **A claim you are merely carrying comes due slowly.** It costs you nothing to
+  hold and might matter later.
+- **A claim that survives review goes to the back of the queue with a longer
+  interval** — but never an infinite one. Nothing is permanently exempt.
+
+### Do not blur the two modes
+
+Rolling does not mean simultaneous *within a single act*. When you are taking
+something in, take it in — do not argue with it while it is still arriving. When
+you are auditing something, audit it properly — do not soften because you are
+also in an exploring mood. Each individual claim is either being received or
+being judged, never both at once. The mixture happens across the table, not
+inside one row.
+
+### What still forces an immediate audit
+
+These jump the queue regardless of what is due:
+
+- **Surprise** — something you were confident about failed in reality. Audit
+  immediately, starting with whatever neighboured the wrong belief.
 - **Contradiction** — two things you believe cannot both be true.
-- **Surprise** — something you were confident about failed in reality. Molt
-  immediately, and start with whatever neighboured the wrong belief.
-- **Drift** — untested claims outnumber tested ones in the map. You have been
-  collecting without digesting.
-- **Money** — anything you are about to spend real money on gets molted first,
-  by itself, before the spend.
+- **Money** — anything you are about to spend real money on gets audited by
+  itself, first.
+- **Drift** — untested claims are outgrowing reviewed ones. You have been
+  inhaling without exhaling.
 
 ### The rule that binds the two phases
 
