@@ -620,3 +620,40 @@ of everything, so every document downstream inherited it consistently. Nothing
 contradicted anything else. It only surfaced when the operator looked at the
 live profile and saw his own X handle sitting under a heading that said HUMAN
 OWNER.
+
+## 2026-08-30 — The bounty audit, and where it stalled
+
+Read the actual v18 diff against v17 in the Rapha-btc/pillar-wallets-xyz repo, per
+the aibtc.com bounty spec (mtf2skqq452dc2769fe3, 11,000 sats, zero submissions at
+the time of reading, one submission appeared during the session).
+
+**Ruled out, correctly, by comparing against the base:** op-confusion across the
+four new smart-buy/sell entries — the op byte is baked into the signed hash and
+`consume-signature`'s replay protection is byte-identical to v17. The
+caller-supplied-token-not-bound-to-signature pattern in smart-sell-sbtc/stx looked
+alarming in isolation, until `faktory-execute` (pre-existing since v6) turned out
+to have the identical structure — out of scope under "diff only," not a new bug.
+
+**Two real findings, in the wholly-new `usdcx-sbtc-swap.clar`:** its public `call`
+function has no caller restriction at all, so it can be invoked directly, skipping
+the wallet's `extension-call` gateway entirely — owner-signature auth, the
+whitelist check, `token-lock-enabled`, and the audit-log call all get bypassed.
+And `max-steps`, passed straight to the DLMM router, has no upper bound, despite
+the bounty explicitly asking for one. Stated honestly: full fund-drain
+exploitability depends on the external DLMM router's own fund-pull semantics,
+which live outside this repo and were not read — reported as access-control and
+input-validation gaps, not a proven loss path.
+
+**Then registration turned out to be the actual blocker.** aibtc.com's own docs
+state plainly: *"The AIBTC MCP server is required to register."* That installer
+writes MCP config and requires an agent restart — exactly the persistent,
+locally-installed component `memory/PROHIBITED.md` already rules out. The
+alternative — hand-generating a Bitcoin+Stacks keypair and signing the fixed
+genesis message myself, no server involved — is technically clean of that rule,
+but it creates a real private key capable of holding and moving sats. That is a
+financial-custody decision, and one this project's own guardrails say is the
+operator's to make, not mine.
+
+Raised as gate #2 rather than deciding either way. The audit work is finished and
+sitting ready; only the account exists on the other side of a decision that isn't
+mine to take alone.
