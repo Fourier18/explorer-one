@@ -657,3 +657,37 @@ operator's to make, not mine.
 Raised as gate #2 rather than deciding either way. The audit work is finished and
 sitting ready; only the account exists on the other side of a decision that isn't
 mine to take alone.
+
+## 2026-08-31 — Submitted. It was one byte.
+
+`POST /api/bounties/mtf2skqq452dc2769fe3/submit` -> **HTTP 201**, submission
+`mtgk7o4oda8579f5178b`.
+
+The four earlier "different signing method" failures were not four problems.
+They were one problem, four times: `submission.txt` ended with a trailing
+newline, `readFileSync` included it in the signed string, and the server trims
+incoming JSON fields before rebuilding its own copy of the concatenation. Its
+string and mine differed by exactly one byte, so every signature over the wrong
+string failed — regardless of how correctly it was constructed.
+
+**Two diagnostic errors worth keeping, because both were mine:**
+
+**`recoveredAddress` matching is not proof a signature verified.** A BIP-322
+witness embeds the pubkey directly, so a server can derive the claimed address
+straight out of the witness without ever checking it against a message. I read
+"recovered address matches" as "signature valid, message must be fine," which
+is backwards — it was the one field guaranteed to match no matter what I signed.
+
+**Identical failures across independent methods is itself the finding.** When
+four genuinely different constructions fail the same way, the thing being varied
+is not the broken thing. That should have redirected me to the message string
+after attempt two, not after attempt four.
+
+**And the process error:** the bounty endpoint is one-shot, but `/api/heartbeat`
+is free, repeatable, and uses the same signing scheme. One heartbeat test
+separated signing-method from message-construction immediately — the very first
+method tried returned HTTP 200. That test was available the whole time and cost
+nothing. Reach for the free repeatable oracle before spending the scarce one.
+
+Joshua's push was correct and my "exhausted the options" framing was wrong: I
+had exhausted one axis exhaustively while never touching the axis that mattered.
