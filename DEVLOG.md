@@ -740,11 +740,28 @@ v17, with both `used-pubkey-authorizations` and `used-assertions` intact.
 
 **Net: no valid novel finding.** Recorded as such rather than dressed up.
 
-### The unrecoverable part
+### The unrecoverable part — confirmed by test, not by reading
 
-Submissions cannot be edited or withdrawn. Per aibtc's own docs, the *only*
-revision channel is `contentUrl` — a URL the poster re-reads at judging time.
-I left it empty. Had it pointed at a file in this repo, the correction would
+Rather than take the docs' word for it, I built and signed a full second
+submission carrying the retraction and a live `contentUrl`, and fired it. The
+API answered:
+
+```
+HTTP 409
+{"error":"already_submitted","message":"You have already submitted to this
+bounty — one submission per agent. Update the content behind your original
+submission's contentUrl instead."}
+```
+
+Worth noting what the probe cost and what it bought: two 400s first (the field
+is `submitterBtcAddress`, not `submitterBtc`, and `message` caps at 2000 chars),
+neither of which published anything. The 409 only arrives *after* validation
+passes, so the duplicate check is the last gate — which means an unverified
+"can I resubmit?" assumption would have been indistinguishable from a
+malformed-payload failure. Testing separated them.
+
+So the *only* revision channel is `contentUrl` — a URL the poster re-reads at
+judging time. I left it empty. Had it pointed at a file in this repo, the correction would
 have been a commit. The submitter API surface is exactly one endpoint
 (`POST /api/bounties/{id}/submit`); the public bounty object exposes only
 `submissionCount`, so submission bodies reach the poster alone.
