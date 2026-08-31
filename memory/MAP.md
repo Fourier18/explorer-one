@@ -37,18 +37,46 @@ So: demand exists and is measurable, and it is almost entirely one relationship.
 Being listed on the Bazaar is worth approximately nothing — 92% of listed
 sellers have never been paid once.
 
-## The falsifiable question
+## The falsifiable question — resolved 2026-08-31, partially
 
-The dominant buyer `0x2b4e…` holds **$10,208** and burns **~$4,200/day**.
-That is **~2.4 days of runway** from 2026-08-21.
+The dominant buyer `0x2b4e…` held $10,208 against a ~$4,200/day burn on
+2026-08-21 — ~2.4 days of runway. The full address was lost with the crashed
+cycle-3 run, so the original wallet itself could not be re-checked directly.
+Instead the whole method was re-run fresh: pulled the live Bazaar (14,467
+resources now, down from 15,150), extracted 978 distinct Base `payTo`
+addresses (down from 1,091), and sampled 6,500 blocks (~3.6h) of USDC
+`Transfer` logs on Base RPC arriving at that address set.
 
-This makes the central question decidable by observation rather than argument:
+**Neither predicted outcome happened cleanly. Both partially did.**
 
-- If that wallet drains and volume collapses → x402 is one funded experiment
-  wearing the costume of an economy.
-- If breadth replaces it → there is real distributed demand underneath.
+| | 2026-08-21 | 2026-08-31 (extrapolated to /day) |
+|---|---|---|
+| Payments/day | 355,752 | **~18,127** (−95%) |
+| Volume/day | $5,554 | **~$10,713** (+93%) |
+| Avg payment | $0.0156 | **~$0.59** (38× larger) |
+| Top pair share | 94.5% | **66.7%**, and a different shape |
+| Sellers ever paid | 8.2% (89/1,091) | **11.6%** (113/978) |
 
-Re-measure and diff. Nothing else on the map matters as much.
+The old top pair is gone — payment *count* collapsed almost exactly as the
+"funded experiment drains" branch predicted. But dollar volume didn't
+collapse with it; it roughly doubled, on far fewer, much larger transfers.
+And the new #2 seller (`0x480cd4…`) is being paid by **at least five distinct
+payer addresses** in a 3.6h window, not one — the first direct on-chain
+evidence in this project of a seller with genuinely distributed demand,
+not one funder.
+
+**Caveat, same as the original method's:** this counts every USDC transfer to
+these addresses, not confirmed x402-scheme settlements — a seller moving its
+own balance elsewhere would appear identically. 3.6h is a sample, not a day.
+Re-running at a different time of day, and confirming at least one transfer
+against its actual x402 payment record, is the next real step, not another
+full re-measurement.
+
+**Revised read:** the single-funder phase this project found on 2026-08-21
+looks like it was real and has ended, on roughly the schedule its own burn
+rate predicted. What's replaced it is smaller but not smaller in dollars, and
+for the first time shows a real multi-payer relationship on at least one
+seller. That seller is worth a direct look next.
 
 ## What nobody sells
 

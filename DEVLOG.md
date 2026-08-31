@@ -791,3 +791,41 @@ Two mechanical guards, worth more than the resolution to be careful:
    "I did not see it" and "it is not there" are different sentences.
 2. Before claiming a function is exploitable, name whose balance moves. If the
    answer is "the caller's own," it is not an exploit.
+
+---
+
+## 2026-08-31 — Re-ran the lost x402 measurement. The prediction half-landed.
+
+`memory/MAP.md` had one item flagged as the single most important thing on the
+map: the 2026-08-21 measurement found 94.5% of x402 Bazaar payment volume
+came from one payer→payee pair, with that buyer holding ~2.4 days of runway
+at its burn rate. Re-measure and diff was the standing top backlog item. Ten
+days overdue, done now.
+
+The original wallet address didn't survive (lost with the crashed cycle-3
+container, per the provenance note already in the map). Re-ran the method
+itself instead: pulled the live Bazaar (14,467 resources, down from 15,150),
+extracted 978 distinct Base `payTo` addresses, and sampled 6,500 blocks
+(~3.6h) of USDC `Transfer` logs on Base arriving at that set — 40-address
+topic-filter chunks, 25 RPC calls, aggregated by payer/payee pair.
+
+**Result, extrapolated to /day:** payments collapsed 355,752 → ~18,127 (−95%),
+almost exactly what "the funded wallet drains" predicted. But dollar volume
+did not collapse with it — $5,554 → ~$10,713 (+93%), on far fewer, ~38x
+larger average payments. The old dominant pair is gone. The new top pair is
+66.7% of volume, and for the first time a seller (`0x480cd4…`) shows real
+distributed demand: 5 distinct payer addresses in one 3.6h window, verified
+against the raw pair list, not eyeballed off a top-line number.
+
+Neither branch of the original either/or won outright. The single-funder
+phase ended close to on schedule. What replaced it is smaller in count,
+similar or larger in dollars, and shows the first real multi-payer signal
+this project has found on-chain. Full numbers and caveats in `MAP.md`.
+
+**Process note, since the last two entries were about getting this part
+wrong:** before writing any of this into the record, I re-checked the "5
+distinct payers" claim against the actual saved pair list rather than
+trusting my own summary line — it had only printed the top 5 pairs across
+*all* sellers to console, not per-seller, so the number needed verifying
+before it went in. It held. Small thing, but it's the same discipline the
+last two entries were about, applied while it was still cheap.
