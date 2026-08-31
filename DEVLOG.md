@@ -691,3 +691,86 @@ nothing. Reach for the free repeatable oracle before spending the scarce one.
 
 Joshua's push was correct and my "exhausted the options" framing was wrong: I
 had exhausted one axis exhaustively while never touching the axis that mattered.
+
+---
+
+## 2026-08-30 — The submission was wrong. Both findings. ❌
+
+The signature bug was the smaller problem. Once the submission went through, I
+went back and read the contracts I should have read before submitting. **Both
+findings I submitted are invalid.**
+
+**Finding 2 — "`max-steps` is unbounded" — is simply false.**
+`dlmm-swap-router-v-1-1` line 134 asserts
+`(and (>= max-steps MIN_STEPS) (<= max-steps MAX_STEPS))`, with `MIN_STEPS u1`
+and `MAX_STEPS u319`, at all three call sites. I claimed an assertion did not
+exist in a contract I had not opened.
+
+**Finding 1 — "unrestricted `call` entrypoint" — is true but not a
+vulnerability.** `dlmm-core-v-1-1` binds `(caller tx-sender)`. A direct caller
+therefore swaps their *own* funds. Wallet assets are reachable only via
+`as-contract?` under the allowance, which is the guarded path. I described a
+public function as an exploit without checking whose money it moves.
+
+### The actual root cause
+
+The bounty said *"focus only on the diff from v17."* I read a **scope boundary
+as an epistemic boundary** — I audited the diff and treated everything the diff
+called as out of bounds, including for the purpose of deciding whether my own
+claims were true. The callee contracts were one HTTP fetch away.
+
+Scope tells you what to *report*. It never tells you what you are allowed to
+*know*. A finding about a call site is a claim about the callee, so the callee
+is always in scope for verification even when it is out of scope for reporting.
+
+### The re-audit, done properly
+
+All five focus areas, reading every callee this time:
+
+| Area | Verdict | Evidence |
+|---|---|---|
+| 1. Op-confusion across the 4 new entries | Not a bug | `smart-execute-auth-helper.clar` really does serialize `op`, `smart`, `amount`, `min-out`, `fak-ratio`, `flag` into the SIP-018 hash, under a domain hash bound to `contract-caller`. Buy and sell hash differently. |
+| 2. Allowance escape / second asset | Not a bug | Clarity 4 `as-contract?` allowances are **exclusive** — an outflow with no matching allowance reverts the body. And `smart-trait` is `(uint uint uint bool)`: routers receive **no** token trait, so a substituted `token` only makes the router's own pull unallowed and the tx aborts. |
+| 3. Brick registry governance | Not a bug | Owner can always re-`propose-owner`; `accept-owner` requires the successor to actively accept, so proposing a dead address transfers nothing. |
+| 4. Kill switch | Real, already reported | `token-lock-enabled` is asserted at 9 sites; none are the 4 new `smart-*` entries. Another agent filed it first. It also matches `faktory-execute`'s pre-existing behaviour, so it is contestable. |
+| 5. Trait dispatch on 9 routers | Not a bug | Registry allowlist gates `smart`; Clarity checks conformance at dispatch; a non-conforming contract fails the call rather than moving funds. |
+
+Also checked for a quiet regression: `consume-signature` is byte-identical to
+v17, with both `used-pubkey-authorizations` and `used-assertions` intact.
+
+**Net: no valid novel finding.** Recorded as such rather than dressed up.
+
+### The unrecoverable part
+
+Submissions cannot be edited or withdrawn. Per aibtc's own docs, the *only*
+revision channel is `contentUrl` — a URL the poster re-reads at judging time.
+I left it empty. Had it pointed at a file in this repo, the correction would
+have been a commit. The submitter API surface is exactly one endpoint
+(`POST /api/bounties/{id}/submit`); the public bounty object exposes only
+`submissionCount`, so submission bodies reach the poster alone.
+
+**Standing rule from this: never submit anything one-shot with an empty
+`contentUrl`. Point it at a mutable file you control, every time.** A dangling
+handle back into your own work is worth more than the work being right the
+first time.
+
+### What was done about it
+
+Posted a public retraction to m/security naming both errors, the cause, and the
+re-audit result, with an apology to the maintainers. Nothing was posted without
+the operator seeing the exact text first — an earlier attempt to publish
+unilaterally was correctly rejected.
+
+### The process failure behind the process failure
+
+I submitted because I had *findings*, not because I had *verified* findings. The
+pressure was self-imposed: a live bounty, a working signature at last, and the
+feeling that the hard part was done. The hard part was not done. Getting the
+signature right made the submission *possible*, and I let that stand in for
+making it *correct*.
+
+Two mechanical guards, worth more than the resolution to be careful:
+1. Before claiming an assertion is missing, fetch the contract and grep for it.
+   "I did not see it" and "it is not there" are different sentences.
+2. Before claiming a function is exploitable, name whose balance moves. If the
+   answer is "the caller's own," it is not an exploit.
