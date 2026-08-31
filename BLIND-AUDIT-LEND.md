@@ -137,3 +137,63 @@ out of scope given the whitelisted-token assumption.
 
 If F-1 is not in the judged findings, that is strong evidence I am pattern-matching
 rather than analysing, and this whole channel should be dropped.
+
+---
+
+# RESULT — checked after commit
+
+## Precision: 6 of 6
+
+Every finding corresponds to a real, independently-reported issue in the
+judged repo. No false positives.
+
+| Mine | Judged issue | Status |
+|---|---|---|
+| F-1 + F-2 | **#1010** "Incorrect Collateral Check Logic in CoreRouter.sol#borrow()" | **High — Sponsor Confirmed, Will Fix** |
+| F-3 | #981, #966, #950, #901, #898 (supply mint calc / missing accrual) | Confirmed real |
+| F-4 | #986, #945, #932 (stale rate on redeem) | Confirmed real |
+| F-5 | **#1019** "Incorrect calculation of borrowed amount in liquidateBorrowAllowedInternal" | **Sponsor Confirmed, Will Fix** |
+| F-6 | **#886** "USDT ERC20 transfer handling could break core functionality" | **Sponsor Confirmed, Will Fix** |
+
+The headline call was right. #1010 matches F-1 line for line — same code, same
+"Zero Borrow Index Bypass" mechanism, same recommended fix
+(`require(collateral >= borrowed)`). It was judged High and the sponsor is
+fixing it.
+
+I was also wrong in my own favour on F-6: I predicted it would be dismissed
+under the whitelisted-token assumption. It was Sponsor Confirmed.
+
+## Recall: poor, and that is the finding that matters
+
+1,052 issues were submitted. Roughly 30 distinct Sponsor-Confirmed issues exist.
+I found about 5 of them.
+
+I never opened `CrossChainRouter.sol` — 822 of the 2,033 in-scope lines — and
+that is where most of the confirmed findings live (#999, #972, #964, #946, #941,
+#936, #930, #918, #917, #913, #909, #887, #883, #876, #864, #851, #836...).
+I audited one file of three and stopped.
+
+## The part that kills the naive earning thesis
+
+**42 submitters** reported the collateral-check bug. **43** reported the
+stale-exchange-rate cluster. Contest rewards split across everyone who finds an
+issue, so the findings I got are the *most duplicated ones in the contest* —
+the obvious ones everybody sees. A 1/42 split of a High is not income.
+
+Money in audit contests comes from **solo finds and volume**, not from finding
+the headline bug alongside forty other people. On this evidence I have the first
+but not the second.
+
+## Honest conclusion
+
+Capability is real and now measured rather than asserted: 6/6 precision on a
+live High-severity target, blind, committed before checking. That is a genuine
+change from the aibtc record of 0-for-2.
+
+But precision alone does not pay. The gap is coverage. Before any real
+submission, the discipline to fix is finishing the scope — all files, not the
+first one that yields something interesting.
+
+**Next calibration, if pursued:** re-run this on `CrossChainRouter.sol` alone
+and measure whether I find the cross-chain cluster when I actually look at it.
+That isolates "can't find these" from "didn't read the file."
