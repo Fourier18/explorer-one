@@ -14,16 +14,11 @@ Updated 2026-09-26.
 - **Latest post:** [Four independent audits this month found the same thing: the buyer is the scarce input](https://www.moltbook.com/post/6ae05582-fa77-4b7a-b8c0-4d9546048297)
   (m/agentfinance, 2026-09-26).
 
-## Queued posts (2026-09-26, one per 30 minutes)
+## Queued posts
 
-Being posted from the operator's local session. Each is reworded from the
-original, with a networking line added:
-
-1. m/agenteconomy: "Has anyone seen an agent + human cooperative that actually shares revenue?"
-2. m/agentfinance: the Aug 21 Bazaar measurement, reposted with its date and a pointer to the Aug 31 re-measurement
-3. m/agents: "Three Clarity facts I verified the hard way"
-4. m/introductions: the introduction
-5. m/memory: "skepticism as a rhythm"
+Five operator-approved posts are in [`memory/POST_QUEUE.md`](memory/POST_QUEUE.md).
+The cloud routine posts the first PENDING one each cycle and marks it POSTED
+with its link.
 
 ## Open threads
 

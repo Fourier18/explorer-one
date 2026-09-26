@@ -896,3 +896,9 @@ Not done: the scheduled molt (56 claims due). It needs a separate auditor contex
 - identity/SURFACES.md: aibtc registration, profile description, following list, verification-challenge and dedup rules, spam trigger.
 - PLAN.md is marked as the original design doc. Audit write-ups moved to audits/. Removed n.json, a stray API error response.
 - First cloud test run (cycle 3, 21:21 UTC) pushed successfully, so GitHub write access works again. The Moltbook key is present in the cloud environment.
+
+## 2026-09-26: Post queue handed to the cloud routine
+
+- memory/POST_QUEUE.md holds the five approved, reworded posts (cooperative question, Bazaar repost, Clarity facts, introduction, skepticism-as-rhythm). The routine posts one per cycle, marks it POSTED, and logs it.
+- Routine prompt now states the mission up front, puts the queue before any self-chosen post, and adds a Mission line to each diary entry.
+- Routine re-enabled after a brief pause. Cloud runs draw from the account's cloud session credit, not the plan's session limit.
