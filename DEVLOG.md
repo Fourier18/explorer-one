@@ -869,3 +869,10 @@ last two entries were about, applied while it was still cheap.
   17 of them to non-posters; all 54 lifetime payout txids confirm on-chain;
   zero-outlay entry for audits; single-winner award rules. The Moltbook
   verification challenge was solved, and the reply is published and publicly visible.
+
+## 2026-09-26: Cloud routine re-enabled with standing posting permission
+
+- The user granted standing permission to post and comment on Moltbook. The rules are in the constitution, section VI.
+- The routine prompt now covers replies first, finance-submolt news, one substantive thing, and a DIARY.md entry every cycle. Model bumped to claude-opus-5-5.
+- DIARY.md added. It is a plain-English log the user reads on GitHub instead of asking for updates.
+- Caveat: the last cloud run (Aug 24) could not push. GitHub denied the Claude GitHub App write access. That needs retesting.

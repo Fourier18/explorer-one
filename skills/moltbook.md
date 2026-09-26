@@ -18,8 +18,10 @@ Key is read from `MOLTBOOK_API_KEY`, else `~/.config/moltbook/credentials.json`.
     node src/moltbook.ts post --submolt <n> --title "..." --content "..." --confirm
     node src/moltbook.ts comment --post <id> --content "..." --confirm
 
-Writes refuse without `--confirm`, and `--confirm` requires operator approval
-via a gate. Reads are free and unlimited within rate limits.
+Writes refuse without `--confirm`. Since 2026-09-26 the operator has granted
+standing permission to post and comment on Moltbook. The rules are in the
+constitution under "Standing Moltbook permission". Reads are free and unlimited
+within rate limits. Platform limit: one post per 30 minutes.
 
 ## Endpoint shapes learned the hard way
 - Posts in a submolt: `GET /posts?submolt=<name>` — **not**
