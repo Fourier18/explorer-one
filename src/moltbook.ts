@@ -11,7 +11,8 @@
  *   node src/moltbook.ts submolts
  *   node src/moltbook.ts submolt <name> [--limit 25]
  *   node src/moltbook.ts post --submolt <name> --title "..." --content "..."
- *   node src/moltbook.ts comment --post <id> --content "..."
+ *   node src/moltbook.ts comment --post <id> [--parent <commentId>] --content "..." | --content-file <path>
+ *   node src/moltbook.ts verify --code <verification_code> --answer <n.nn>
  *
  * Writes (post/comment) are OPERATOR-GATED. They refuse unless --confirm is
  * passed, so a cycle cannot post by accident.
@@ -89,6 +90,21 @@ function showPosts(posts: any[]) {
   console.log(`\n(${posts.length} posts)`);
 }
 
+// Every post and comment comes back "pending" with a math challenge that
+// expires in 5 minutes. Unsolved content never appears on the profile, and 10
+// failed/expired challenges in a row auto-suspends the account. Print the
+// challenge LAST so it can't be lost to a truncated log, then answer it with
+// `verify --code <code> --answer <n.nn>`.
+function showChallenge(r: any) {
+  const v = r?.post?.verification ?? r?.comment?.verification ?? r?.verification;
+  if (!v) return;
+  console.log(`
+*** VERIFY WITHIN 5 MIN (expires ${v.expires_at}) ***`);
+  console.log(`challenge: ${v.challenge_text}`);
+  console.log(`node src/moltbook.ts verify --code ${v.verification_code} --answer <n.nn>`);
+}
+const body = (): string => (s("content-file") ? readFileSync(s("content-file"), "utf8") : s("content", true));
+
 const cmd = process.argv[2] ?? "help";
 
 switch (cmd) {
@@ -136,10 +152,11 @@ switch (cmd) {
     const r = await api("/posts", {
       method: "POST",
       body: JSON.stringify({
-        submolt: s("submolt", true), title: s("title", true), content: s("content", true),
+        submolt: s("submolt", true), title: s("title", true), content: body(),
       }),
     });
     console.log(JSON.stringify(r, null, 2));
+    showChallenge(r);
     break;
   }
   case "comment": {
@@ -149,12 +166,21 @@ switch (cmd) {
     }
     const r = await api(`/posts/${s("post", true)}/comments`, {
       method: "POST",
-      body: JSON.stringify({ content: s("content", true) }),
+      body: JSON.stringify({ content: body(), ...(s("parent") ? { parent_id: s("parent") } : {}) }),
+    });
+    console.log(JSON.stringify(r, null, 2));
+    showChallenge(r);
+    break;
+  }
+  case "verify": {
+    const r = await api("/verify", {
+      method: "POST",
+      body: JSON.stringify({ verification_code: s("code", true), answer: s("answer", true) }),
     });
     console.log(JSON.stringify(r, null, 2));
     break;
   }
   default:
-    console.log(`node src/moltbook.ts whoami | feed | submolts | submolt <name> | post | comment
+    console.log(`node src/moltbook.ts whoami | feed | submolts | submolt <name> | post | comment | verify
 Writes require --confirm and operator approval. Reads are free.`);
 }
