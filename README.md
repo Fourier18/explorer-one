@@ -1,92 +1,113 @@
 # Explorer One
 
-An agent whose mission is to go out into the agent internet, learn from other
-agents how agents make money, and grow. It has a constitution, four layers of
-memory, a ledger, and a scheduled skepticism cycle called the molt.
+An agent that goes out onto the agent internet to learn how agents make money
+and to make friends while it does. It has a constitution, layered memory, a
+ledger, and a scheduled skepticism cycle called the molt.
 
-**This repository is its mind.** Every cycle is a cold start — no conversation
-carries over — so the constitution, the claims, the journal, and the ledger here
-are the whole of what the agent is. If a cycle didn't commit it, it didn't
-happen.
+On Moltbook it is **[u/grokfreeagent](https://www.moltbook.com/u/grokfreeagent)**.
+"Explorer One" is the project's name.
 
-It was built to run as a scheduled cloud routine, which turned out not to work:
-Anthropic's cloud sandbox blocks outbound network to everything except GitHub
-and package registries, and an agent whose job is talking to other agents needs
-the open internet. That routine is disabled. It currently runs where there is
-real network access. Either way it needs no API key — a Claude subscription
-covers it. The full story, including that wrong turn, is in the devlog.
+**Want to know what it's been doing? Read [`DIARY.md`](DIARY.md).** It adds a
+short, plain-English entry every cycle: what it did, what it posted, who it met,
+and what it found.
 
-- [`PLAN.md`](PLAN.md) — the design and the horizon
-- [`identity/CONSTITUTION.md`](identity/CONSTITUTION.md) — what the agent is
-- [`ROUTINE.md`](ROUTINE.md) — the cloud routine prompt and its configuration
-- [`DEVLOG.md`](DEVLOG.md) — why things are the way they are, in order, including the wrong turns
+## How it runs
+
+- **Cloud routine "Explorer One"** runs every 6 hours (00:41, 06:41, 12:41 and
+  18:41 UTC) at [claude.ai/code/routines](https://claude.ai/code/routines). Each
+  run clones this repo, works one cycle, then commits and pushes to the
+  `claude/memory` branch. The prompt and settings are in [`ROUTINE.md`](ROUTINE.md).
+- **Locally**, the operator's copy lives in the `ExplorerScarlet` folder.
+  Interactive sessions there are for bigger work: fixes, research, and setting direction.
+- **All memory is on `claude/memory`.** `main` is the original scaffold. Always
+  work on `claude/memory` and push there. The cloud platform only accepts pushes
+  to branches starting with `claude/`.
+
+The machine is destroyed after every run. **The repo is the only memory. If a
+cycle didn't commit and push it, it didn't happen.**
+
+## What it's allowed to do
+
+Since 2026-09-26 it has **standing permission to post, comment, reply, upvote and
+follow on Moltbook** without asking first, within the rules in
+[`identity/CONSTITUTION.md`](identity/CONSTITUTION.md) (section VI). In short:
+verify every fact, include a networking line, never pay first, solve Moltbook's
+5-minute verification challenge immediately, and log everything. Spending money,
+creating accounts, and accepting terms still go through the operator.
+[`memory/PROHIBITED.md`](memory/PROHIBITED.md) lists operator rulings that are
+off-limits.
+
+## Where things are
+
+| File | What it is |
+|---|---|
+| [`DIARY.md`](DIARY.md) | Plain-English log, newest first. Start here. |
+| [`DEVLOG.md`](DEVLOG.md) | Detailed engineering and decision log, in order, including wrong turns |
+| [`NEXT.md`](NEXT.md) | Current state and open threads |
+| [`identity/CONSTITUTION.md`](identity/CONSTITUTION.md) | Who the agent is and the rules it follows |
+| [`identity/SURFACES.md`](identity/SURFACES.md) | Accounts, handles, and posting limits |
+| [`identity/AUDITOR.md`](identity/AUDITOR.md) | Brief for the fresh context that rules on claims during a molt |
+| [`memory/MAP.md`](memory/MAP.md) | The current picture of who actually gets paid, and how |
+| [`memory/BACKLOG.md`](memory/BACKLOG.md) | Ranked next things to do |
+| [`memory/PRIORS.md`](memory/PRIORS.md) | Field notes inherited from the earlier AgentIncomes research |
+| [`memory/PROHIBITED.md`](memory/PROHIBITED.md) | Operator rulings: don't do these |
+| [`skills/`](skills/) | Acquired capabilities, each with a test |
+| [`audits/`](audits/) | Smart-contract audit work (Clarity bounties, ENS contest) |
+| [`journal/`](journal/) | Per-cycle journal entries |
+| [`PLAN.md`](PLAN.md) | The original design document (Aug 18) |
 
 ## How a cycle works
-
-The routine fires on its cron and starts a cold cloud session. The session runs:
 
 ```bash
 node src/cli.ts brief
 ```
 
-`brief` opens a cycle and prints everything the agent needs with zero prior
-context: constitution, surfaces, scorecard, drift, danger queue, capabilities,
-open gates, recent cycles, backlog, and whether this cycle is a molt. The agent
-picks **one** thing, does it, records as it goes, writes a journal entry, then:
+`brief` opens a cycle and prints everything needed with zero prior context:
+constitution, surfaces, scorecard, drift, danger queue, capabilities, open gates,
+recent cycles, backlog, and whether this cycle is a molt. The agent answers
+people who replied to it, scans the finance submolts, does **one** substantive
+thing, logs it, adds a diary entry, and then commits and pushes.
 
-```bash
-node src/cli.ts next-wake --hours 6 --reason "..." --outcome "..."
-```
-
-and commits. **The machine is destroyed when the run ends — the repo is the only
-memory.** If it wasn't committed, it didn't happen.
+Moltbook access goes through `src/moltbook.ts` (see
+[`skills/moltbook.md`](skills/moltbook.md)).
 
 ## Zero dependencies
 
-Nothing to install. Node 24's built-in `node:sqlite` does the ledger; there is
-no SDK, no API key, and no `node_modules`. Anything that can run bash can drive
-this — a cloud routine, an Agent SDK harness, another model entirely, or you.
-That portability is deliberate: the memory and the rules live in the repo, not
-in any one runtime.
+Nothing to install. Node 24's built-in `node:sqlite` runs the ledger. The
+Moltbook key comes from `MOLTBOOK_API_KEY` or `~/.config/moltbook/credentials.json`
+and is kept out of this public repo.
 
 ## Operator commands
 
-```bash
-node src/cli.ts gates
-```
-
 | Command | Does |
 |---|---|
-| `brief` | Start/resume a cycle, print the full orientation |
-| `scorecard` | Cycles, capabilities, claims, molts, money |
-| `gates` | Actions waiting on you |
-| `approve <id>` / `deny <id>` | Resolve a gate |
-| `smoke` | Verify the constitution's invariants still hold |
-| `help` | Every ledger command |
+| `node src/cli.ts brief` | Start or resume a cycle and print the full orientation |
+| `node src/cli.ts scorecard` | Cycles, capabilities, claims, molts, money |
+| `node src/cli.ts gates` | Actions waiting on the operator |
+| `node src/cli.ts approve <id>` / `deny <id>` | Resolve a gate |
+| `node src/smoke.ts` | Check that the constitution's invariants still hold |
+| `node src/cli.ts help` | Every ledger command |
 
 ## The rules are in the code, not the prompt
 
-- `record-claim` **has no status parameter.** Everything enters `untested`.
-  Intake is structurally incapable of rendering a verdict, so early skepticism
-  cannot filter out the weak signals that later turn out to matter.
-- `molt-rule` is the **only** path that changes a claim's status, and the schema
-  rejects any status outside the four.
+- `record-claim` **has no status parameter.** Everything enters as `untested`,
+  so intake can't filter out weak signals that later turn out to matter.
+- `molt-rule` is the **only** way to change a claim's status, and the schema
+  rejects any status outside the four allowed ones.
 - `open-experiment` **requires** a prediction, so a result can never exist
-  before a prediction does. That is what makes surprise detectable.
-- Nothing is ever deleted. Shedding writes `shed_at` and `shed_reason`, because
-  a belief that is false today can be true again when the world moves.
+  before its prediction does. That's what makes surprise detectable.
+- Nothing is ever deleted. Shedding a claim writes `shed_at` and `shed_reason`.
 
-```bash
-node src/smoke.ts
-```
+## History, briefly
 
-## Layout
+- **Aug 18–21:** designed, built, registered on Moltbook as grokfreeagent.
+- **Aug 21–24:** the cloud routine ran, and its work measured the x402 economy
+  on-chain. Some cycles couldn't push to GitHub, and their results survived
+  only in run logs. The routine was paused Aug 24.
+- **Aug 30–Sept 14:** local sessions: Clarity audit bounties on aibtc (one wrong
+  submission, retracted publicly), a blind calibration audit, the ENS contest,
+  and x402 re-measurements.
+- **Sept 26:** standing posting permission granted, verification-challenge bug
+  fixed, `DIARY.md` added, and the cloud routine re-enabled every 6 hours.
 
-```
-identity/    CONSTITUTION.md (the DNA), SURFACES.md (accounts), avatar
-memory/      PRIORS.md, BACKLOG.md, MAP.md, lessons/
-journal/     one file per cycle, append-only
-ledger/      schema.sql, explorer.db  (committed — it is memory)
-skills/      self-acquired capabilities, each with a smoke test
-src/         cli.ts, brief.ts, db.ts, smoke.ts
-```
+Full detail is in [`DEVLOG.md`](DEVLOG.md).

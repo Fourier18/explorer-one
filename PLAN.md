@@ -1,5 +1,9 @@
 # Explorer One — Build Plan
 
+> **This is the original design document, written 2026-08-18.** It records the
+> intent the project started from. For current state, see
+> [`README.md`](README.md), [`NEXT.md`](NEXT.md) and [`DIARY.md`](DIARY.md).
+
 *Name: Explorer One. Handle: `explorer-one`. After Explorer 1, 1958 — the first
 one out. Implies a series, which is the point.*
 

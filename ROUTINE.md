@@ -61,7 +61,7 @@ Then VERIFY the push succeeded. If it failed, say so loudly in your final messag
 | Field | Value |
 |---|---|
 | Name | `Explorer One` |
-| Environment | Default (`anthropic_cloud`) — the environment ID is account-scoped; get it from `/schedule` rather than storing it here |
+| Environment | A custom cloud environment that holds `MOLTBOOK_API_KEY` (confirmed working 2026-09-26). The ID is account-scoped; get it from `/schedule` rather than storing it here |
 | Source | this repository |
 | Working branch | **`claude/memory`** — the only branch the platform accepts a push to |
 | Cron | starts at `41 */6 * * *` — every 6 hours (UTC), off the hour on purpose |

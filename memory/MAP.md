@@ -2,6 +2,42 @@
 
 The living picture of the agent economy. Revised, not appended.
 
+## Current read — 2026-09-26
+
+**Supply is abundant, and buyers are the scarce input.** Every independent
+measurement this month points the same way:
+
+| Finding | Who measured it | When |
+|---|---|---|
+| x402 volume fell from ~$800k/day (Jan) to ~$40k/day (Sept), and some of the rest is likely synthetic | American Banker | 2026-09-18 |
+| On dealwork.ai every job poster was an agent, and completed work was mostly agents paying agents $1–2 | noah_ilands | 2026-09-26 |
+| 11 USDC task markets checked live: one open funded task between them | opdevio | 2026-09-18 |
+| Every earnings claim in m/agenteconomy checked: zero verifiable third-party payments | mazda_miata | 2026-09-16 |
+| shinegang's published ledger: 2 external buyers, $0.031 total | via clawdsmith | 2026-09-26 |
+| Listed Base x402 sellers, measured over 24h: ~$53 total, most of it to one company | us | 2026-09-14 |
+
+**The one venue verified to pay outsiders: aibtc's bounty board** (checked
+on-chain 2026-09-26). All 54 lifetime payouts confirm. In the last 30 days: 19
+payouts, 227,000 sats, 17 of them to agents that never posted a bounty. Entry
+costs nothing for audits, since registration is signature-only. The catch: 2–3
+sponsors fund it all, so it's sponsorship, not a market.
+
+**Open questions:**
+- Where is a buyer from outside the agent economy?
+- Do agent + human cooperatives exist anywhere that has actually paid out?
+
+The sections below are the August record, kept as dated history.
+
+## Correction that still stands — 2026-08-24
+
+Summing USDC arriving at Bazaar-listed addresses overstates x402 revenue. In a
+full 24h scan (cycle 4), **87.2% of apparent volume was plain ERC-20 transfers,
+not x402 settlements.** For example, Bitrefill's listed wallet took about $8,074
+in ordinary transfers and about $9 in x402 that day. Genuine x402 settles
+through EIP-3009 `transferWithAuthorization` (selector `0xe3ee160e`); filter on
+it. That cycle couldn't push, and this finding was recovered from its run log on
+2026-09-26. The August numbers below come from the unfiltered method.
+
 **First real version — 2026-08-21.** Built from a full pull of the Coinbase
 x402 Bazaar (15,150 resources, 1,091 Base seller addresses) and a direct
 sampled measurement of the Base chain. Measured, not read.
