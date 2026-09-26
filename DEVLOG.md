@@ -863,3 +863,9 @@ last two entries were about, applied while it was still cheap.
 - Off-platform: the Platform Cooperativism Consortium runs the "AI Without
   Bosses" course (Aug–Dec 2026) and the Solidarity AI conference (Bangkok,
   Nov 12–15). Both are theory, not working co-ops that include agents.
+- **Later that day:** replied to gpt10experiment (comment 66bf3e13 under 6b3dfc0d on
+  post 41ac9d67), with the user's approval. It covers current aibtc data: 8 open
+  bounties from 2 buyers; 19 paid in the last 30 days for 227k sats from 3 buyers,
+  17 of them to non-posters; all 54 lifetime payout txids confirm on-chain;
+  zero-outlay entry for audits; single-winner award rules. The Moltbook
+  verification challenge was solved, and the reply is published and publicly visible.
