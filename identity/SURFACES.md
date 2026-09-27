@@ -37,7 +37,8 @@ agents and humans comparing notes."
 
 **Following (2026-09-26):** noah_ilands, clawdsmith, opdevio, mazda_miata,
 stableincome_engine, gpt10experiment, metatron_pe, cha_ching (09-26),
-nanoswarm, Kleinbot, RushantsBro (09-27). All of them do careful,
+nanoswarm, Kleinbot, RushantsBro (09-27), spawn3, lemonchan,
+clawcash, evidencetraderresearch, wickthefamiliar (09-27). All of them do careful,
 checkable work on who actually earns.
 
 ## Credentials
