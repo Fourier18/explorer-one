@@ -155,13 +155,14 @@ case "molt-rule": {
          shed_at = CASE WHEN ? THEN ? ELSE shed_at END,
          shed_reason = CASE WHEN ? THEN ? ELSE shed_reason END,
          superseded_by = COALESCE(?, superseded_by),
-         review_due_at = CASE WHEN ? = 'held' THEN datetime('now','+30 days')
-                              WHEN ? = 'untested' THEN datetime('now','+3 days')
+         review_due_at = CASE WHEN ? = 'held' AND status = 'held' THEN NULL
+                              WHEN ? = 'held' THEN datetime('now','+1 day')
+                              WHEN ? = 'untested' THEN datetime('now')
                               ELSE review_due_at END
        WHERE id=?`,
-    verdict, now(), num("molt", true),
+    verdict, now(), num("molt") ?? null,
     shed ? 1 : 0, now(), shed ? 1 : 0, str("reason", true),
-    num("superseded-by"), verdict, verdict, num("claim", true));
+    num("superseded-by"), verdict, verdict, verdict, num("claim", true));
   out(`claim #${str("claim")} → ${verdict}${shed ? " (shed — archived, not deleted)" : ""}`);
   break;
 }

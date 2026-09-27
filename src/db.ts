@@ -156,23 +156,11 @@ export function checkMoltDue(): MoltCheck {
     };
   }
 
-  // Drift — inhaling without exhaling.
-  const drift = one<{ untested: number | null; resolved: number | null; ratio: number | null }>(
-    `SELECT * FROM v_drift`,
-  );
-  if (drift?.ratio != null && drift.ratio > 3 && (drift.untested ?? 0) >= 15) {
-    return {
-      due: true,
-      trigger: "drift",
-      detail: `${drift.untested} untested against ${drift.resolved} resolved. Collecting without digesting.`,
-    };
-  }
-
   if (nDue > 0) {
     return {
       due: true,
       trigger: "scheduled",
-      detail: `${nDue} claim(s) have come due for review. Audit those, then go back to exploring — this is a partial review, not a full stop.`,
+      detail: `${nDue} belief(s) are due for a test. Test them yourself, acted-on first.`,
     };
   }
 

@@ -62,38 +62,22 @@ ${readIf(join(ROOT, "memory", "BACKLOG.md")) || "(empty)"}
     parts.push(`
 ---
 
-# THIS CYCLE IS A MOLT
+# BELIEFS TO TEST THIS CYCLE
 
-Trigger: **${molt.trigger}** — ${molt.detail}
+Trigger: **${molt.trigger}**, ${molt.detail}
 
-Stop collecting. **You do not rule on your own beliefs.** You still hold the
-reasoning that produced them, and you have already acted on some of them. The
-verdicts come from a separate context that was never persuaded of any of it.
+The operator's rule (constitution, Phase two): test each belief yourself, once.
+- Fails, or can't be tested at all → reject: \`--verdict failed\`
+- Passes → \`--verdict held\` (it comes back next cycle for one retest)
+- Passes the retest → \`--verdict held\` again. It is held, but still tentative.
+- If any new evidence bears on a held belief, test it again right away:
+  \`--verdict untested\` reopens it.
 
-1. \`node src/molt.ts packet --trigger ${molt.trigger} --detail "..."\`
-   This opens the molt and prints an audit packet: the auditor's charter plus
-   the evidence fields of every live claim, acted-on-but-unverified first.
+\`node src/cli.ts molt-rule --claim <id> --verdict held|failed|untested --reason "<evidence>"\`
 
-2. **Spawn a subagent and give it the packet as its entire prompt.** Nothing
-   else. Do not summarise it, do not add your view of which claims are probably
-   fine, do not tell it what you hope it concludes. It gets the table and the
-   charter — no journal, no map, no narrative. Handing it those hands it your
-   bias, which is the one thing you are trying to get away from.
-
-3. Save its JSON reply and apply it:
-   \`node src/molt.ts apply --molt <id> --file <path>\`
-   You do not argue with the verdicts. If you think one is wrong, that is a new
-   claim to record and test, not a verdict to overturn.
-
-4. **Now your part, which the auditor was deliberately kept out of:** decide
-   what the verdicts mean. Revise memory/MAP.md to the new shell. Write lessons
-   for what failed — a disproved belief is a real result. Anything still
-   untested and acted-on goes to the TOP of memory/BACKLOG.md as a test.
-
-5. Rewrite memory/BACKLOG.md in light of what you now believe.
-
-Read memory/PRIORS.md during this molt. Those are another expedition's field
-notes, all untested in current conditions. Check any that are now checkable.
+Beliefs you act on go first. Test as many as you can this cycle while still
+answering people. List what's due with \`node src/cli.ts brief\` (danger queue)
+or query claims where review_due_at <= now.
 `);
   } else {
     parts.push(`

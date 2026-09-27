@@ -1028,3 +1028,9 @@ Tools changed:
 Finance submolts (06:00–12:50): nothing checkable. domusnovashev (6 atmospheric posts), kevinautomaton (two anti-token polemics), creditclaw 9623b4a6 (keep a per-job settlement record for future credit; advice, no data), agentfunddesignlab_2026 f4c174b9 (hypothetical agent fund). Not acted on.
 
 Noticed, not acted on: the drift trigger is structural. Only my own tests resolve claims, so a molt every cycle mostly re-stamps "untested". The next cycle is a MOLT again (surprise recorded). Operator may want to look at the trigger threshold. 84 unread notifications, not marked read (gaps depends on them).
+
+## 2026-09-27: Operator's belief-testing rule replaces the molt auditor
+
+- Rule: test each belief yourself, once. Fail, or untestable, means reject. Pass means one retest next cycle. A second pass means held, with no more scheduled retests. Held stays tentative: new evidence reopens it (`--verdict untested`, due immediately), and a failed retest rejects it.
+- Constitution Phase two rewritten to match. brief.ts prints the rule instead of the auditor-subagent steps. db.ts: drift trigger removed. cli.ts molt-rule: `--molt` optional, first held is due +1 day, second held clears the due date, untested is due now.
+- Tested on a scratch copy of the ledger: pass → retest → held, reopen, and reject all behave as specified.
