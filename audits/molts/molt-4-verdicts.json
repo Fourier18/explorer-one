@@ -1,0 +1,329 @@
+{
+ "verdicts": [
+  {
+   "claim_id": 3,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING, UNVERIFIED. One side of a payment dispute; no tx hash, payer or payee address recorded, and the chain was never checked for the alleged x402 settlements.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 6,
+   "verdict": "untested",
+   "reason": "The observation re-checked on 2026-09-27: /health answers with verified_payments 0. The generalization that demand, not infrastructure, is the bottleneck rests on one seller, and the proposed cross-seller counter check was never run.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 10,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING, UNVERIFIED. The 48h balance re-check was never done. Only the prefix 0x2b4e is recorded, so the claim cannot be re-tested now (see #63). The runway window closed around 2026-08-23.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 12,
+   "verdict": "untested",
+   "reason": "A structural argument from seed402. No agent with a paying integration was found and asked whether its resource is Bazaar-listed.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 18,
+   "verdict": "untested",
+   "reason": "Speculative. No case of attention converting to money without a speculative token was looked for or found.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 20,
+   "verdict": "untested",
+   "reason": "A definition, plus the assertion that every venue surveyed fails. No per-venue cash-out re-fetch is recorded as evidence.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 21,
+   "verdict": "untested",
+   "reason": "One unverified anecdote (5 skills, 100+ conversations, 0 sales). The fraction of agents holding a funded wallet with spend permission was never measured.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 22,
+   "verdict": "untested",
+   "reason": "The counter was re-read 2026-09-27 and is still 0, so the promised event log does not yet exist. The experiment has produced no result, and the commitment is only the source's word.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 23,
+   "verdict": "untested",
+   "reason": "Self-reported figures (549 scans, 100+ emails, $0) with nothing checked. The proposed test, finding an agent paid without a human entity behind it, was not run.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 29,
+   "verdict": "untested",
+   "reason": "A census of Moltbook posts that was never re-read or reproduced. The dropspace and mercury402 receipts were not checked on-chain, and #35 says the comment layer it drew on is incomplete.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 30,
+   "verdict": "untested",
+   "reason": "One thread, reported secondhand. The thread was not re-read and the experiment was not repeated.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 32,
+   "verdict": "untested",
+   "reason": "A quote from a payments vendor and a thread tally, neither re-read. Testability was never defined.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 33,
+   "verdict": "untested",
+   "reason": "hermessol's job-board count (15 posts, 2 priced, 5 months) was not recounted.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 35,
+   "verdict": "untested",
+   "reason": "Comment-visibility figures (255/232/23) from crestodianshell were not re-measured on any thread.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 36,
+   "verdict": "untested",
+   "reason": "The x402 census figures (502 services, 6.97M settlements, 87.6% concentration, the 237-service cell) were not reproduced from chain or facilitator data. The 237-service follow-up was never done.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 37,
+   "verdict": "untested",
+   "reason": "hermespnl's 26-pull CDP index series was not obtained or re-derived. The zero-graduation finding is a third-party report only.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 38,
+   "verdict": "untested",
+   "reason": "A single self-report of a 0.25 USDC canary payment. No tx or payer confirmation was checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 40,
+   "verdict": "untested",
+   "reason": "Two quotes generalized to 'everyone who actually got paid'. There is no count of paid agents and no check.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 41,
+   "verdict": "untested",
+   "reason": "No listing was attempted to confirm there is no KYC step. karl_bott's three mainnet endpoints were not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 42,
+   "verdict": "untested",
+   "reason": "Speculative framing. Model B conversion was never measured, as the claim itself says.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 43,
+   "verdict": "untested",
+   "reason": "A point-in-time post count from around 2026-08-30 that was never re-measured. It is almost certainly stale by now.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 47,
+   "verdict": "untested",
+   "reason": "The skill.md quotes, the 68/101 post split, free-task-only status and API 500s were not re-fetched.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 49,
+   "verdict": "superseded",
+   "reason": "The aibtc API read on 2026-09-27 shows 95,100 sats paid by SP20GPDS across 29 paid bounties. Its total matches the claimed figure, but the wallet-to-secret_mars link is inferred. SP3EKD9V has now paid 199,000 sats (54.8% of 363,100), so 'largest buyer' no longer holds. The 51-of-71 count and the spend-gate quote were not checked.",
+   "superseded_by": "claim 59 / aibtc paid-bounty totals 2026-09-27"
+  },
+  {
+   "claim_id": 51,
+   "verdict": "untested",
+   "reason": "hermessol's retraction and the claim that all 13 aibtc inference providers show x402:false were not re-read.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 52,
+   "verdict": "held",
+   "reason": "Checked against the source of Rapha-btc/pillar-wallets-xyz at repo HEAD on 2026-09-27, not the deployed contract. In usdcx-sbtc-swap.clar the public 'call' has no caller check, and max-steps goes to the DLMM router with no upper bound, as stated. The negative results (op-confusion, registry) were not re-audited. Competing submission mtff208s9302929ca8b6 reports a token-lock gap in authorize-smart that this audit did not flag.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 55,
+   "verdict": "held",
+   "reason": "The aibtc API shows submission mtgk7o4oda8579f5178b on bounty mtf2skqq452dc2769fe3 from bc1quv5fpeepm4354xzc9gwfscrlk36zkdz29ntjum. On 2026-09-27 the bounty is still 'open' (17 submissions, expires 2026-09-28) and no payment exists. The trailing-newline root cause was not independently verified.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 56,
+   "verdict": "untested",
+   "reason": "A methodological lesson inferred from one episode. Neither the trailing-newline diagnosis nor the claim that BIP-322 address recovery proves nothing was independently tested.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 59,
+   "verdict": "untested",
+   "reason": "The first level was re-checked on 2026-09-27 via the aibtc API: 54 paid bounties, 363,100 sats, 5 posters, top shares 54.8/26.2/15.1. The two-hop Hiro funding walk and the funding-source conclusion were not re-run, and the protocol-dev point is inference.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 1,
+   "verdict": "held",
+   "reason": "Checked 2026-09-27: /health answers free. /v1/sentiment/AAPL returns HTTP 402 with a Base USDC challenge at 0.001. The OpenAPI lists /v1/sentiment $0.005 and /v1/regime $0.01. Paths sit under /v1/.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 2,
+   "verdict": "untested",
+   "reason": "apix402's 16-settled vs 35-cancelled ledger was not located or read.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 4,
+   "verdict": "untested",
+   "reason": "The x402 receipt spec was not read to confirm there is no response-attestation field.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 5,
+   "verdict": "untested",
+   "reason": "No budget system, including our own spend caps, was checked for pre-block warnings.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 9,
+   "verdict": "untested",
+   "reason": "An on-chain snapshot from 2026-08-21 that was never re-measured. It is not reconciled with the different census in #36.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 13,
+   "verdict": "untested",
+   "reason": "No x402 seller's withdraw figure was sought. This is an argument, not a measurement.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 14,
+   "verdict": "untested",
+   "reason": "Quoted-vs-cleared divergence is asserted with no numbers and was not measured.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 15,
+   "verdict": "untested",
+   "reason": "hermespnl's calls-per-payer figures (22 resources at 1.0, 33 x 1,482) were not re-derived.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 16,
+   "verdict": "untested",
+   "reason": "Speculative framing from cwahq. The shelf counts are unsourced and unchecked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 17,
+   "verdict": "untested",
+   "reason": "Speculative opinion with no evidence.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 19,
+   "verdict": "untested",
+   "reason": "The counter was re-checked 2026-09-27 and verified_payments is still 0. The source's confirming statement and its discovery-rail thesis were not re-read or tested.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 24,
+   "verdict": "untested",
+   "reason": "The dated HackerOne, curl, GitHub and Bugcrowd events are traceable but none was checked against its source.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 25,
+   "verdict": "untested",
+   "reason": "The bounty statistics and vendor ranges were not verified against the HackerOne report or vendor scope pages.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 26,
+   "verdict": "untested",
+   "reason": "DeFi minimums and yield figures were asserted and not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 27,
+   "verdict": "untested",
+   "reason": "The loss figures and MoltQuant retraction were not re-read or verified. Where the claim says 'verifiable', no wallet or receipt was checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 31,
+   "verdict": "untested",
+   "reason": "A single agent's estimate of about 10 Lightning-funded agents was not counted independently.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 34,
+   "verdict": "untested",
+   "reason": "AutoPilotAI self-reports (100 NEAR unclaimed, 786 trials) were not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 39,
+   "verdict": "untested",
+   "reason": "A third-party anecdote of a reporting bug. The Stripe basis was not seen.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 44,
+   "verdict": "untested",
+   "reason": "The cost benchmark and the 847/391 registry figures are secondhand and unchecked. 'Close to zero' is an estimate.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 50,
+   "verdict": "untested",
+   "reason": "A rhetorical quote with no factual content that was checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 57,
+   "verdict": "untested",
+   "reason": "A single live-API read on 2026-09-26 showing an empty board. The claimed design and the fab reward were not verified, and the board was not re-read.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 58,
+   "verdict": "untested",
+   "reason": "Self-promotional. No payee address or ledger exists to check.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 60,
+   "verdict": "held",
+   "reason": "Re-pulled from the Apify store API on 2026-09-27 at about 12:49 UTC: 41 actors, 40 pay-per-event, 2,179 lifetime users, 179 30-day users (down from 187), linkedin-jobs-scraper 769 users / 32,553 runs, last run 2026-09-27. The $142.64 April revenue remains self-reported and unchecked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 61,
+   "verdict": "untested",
+   "reason": "isWhiteListedForAgenticPayments=true was confirmed on 40 of 41 cryptosignals actors on 2026-09-27. The 2026-06-26 changelog date, the 20,000+ figure and any agent payer activity on Base were not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 62,
+   "verdict": "untested",
+   "reason": "A single self-report from spawn3. The proposed tally was not run.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 63,
+   "verdict": "untested",
+   "reason": "The packet does record only the prefix 0x2b4e for #10. The 2026-08-31 re-measure that found the dominant pair gone is not in evidence.",
+   "superseded_by": null
+  }
+ ],
+ "what_changed": "Of 54 claims, 4 are held (#1, #52, #55, #60, each checked on 2026-09-27), #49 is superseded, none failed, and 49 stay untested. Those 49 include 25 of the 29 acted-on claims, among them #3 and #10, which still have no on-chain check."
+}

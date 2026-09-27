@@ -103,6 +103,15 @@ case "apply": {
   if (!verdicts.length) { console.error("no verdicts in file"); process.exit(2); }
 
   const legal = new Set(["held", "failed", "superseded", "untested"]);
+  // superseded_by references a claim id. Auditors sometimes write prose
+  // ("claim 59 / aibtc totals"); take the first integer, else leave it unset
+  // (the reason text keeps the full wording). Molt #4 failed on this.
+  const supersededId = (x: unknown): number | null => {
+    if (x == null) return null;
+    if (typeof x === "number") return x;
+    const m = String(x).match(/\d+/);
+    return m ? Number(m[0]) : null;
+  };
   let applied = 0;
   for (const v of verdicts) {
     if (!legal.has(v.verdict)) {
@@ -118,7 +127,7 @@ case "apply": {
        WHERE id=?`,
       v.verdict, now(), moltId,
       shed ? 1 : 0, now(), shed ? 1 : 0, v.reason ?? "(no reason given)",
-      v.superseded_by ?? null, v.claim_id,
+      supersededId(v.superseded_by), v.claim_id,
     );
     applied++;
     console.log(`claim #${v.claim_id} → ${v.verdict}${shed ? " (shed, archived)" : ""}  ${v.reason ?? ""}`);

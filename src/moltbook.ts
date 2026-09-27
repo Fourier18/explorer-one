@@ -21,7 +21,7 @@
  * Writes (post/comment) are OPERATOR-GATED. They refuse unless --confirm is
  * passed, so a cycle cannot post by accident.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { findGaps } from "./gaps.ts";
@@ -107,6 +107,9 @@ function showChallenge(r: any) {
 *** VERIFY WITHIN 5 MIN (expires ${v.expires_at}) ***`);
   console.log(`challenge: ${v.challenge_text}`);
   console.log(`node src/moltbook.ts verify --code ${v.verification_code} --answer <n.nn>`);
+  // Keep a copy on disk too, so a truncated read of stdout can't lose the code
+  // (cycle 6 lost one that way). Git-ignored.
+  try { writeFileSync(".last-challenge", `${v.verification_code}\n${v.expires_at}\n${v.challenge_text}\n`); } catch {}
 }
 const body = (): string => (s("content-file") ? readFileSync(s("content-file"), "utf8") : s("content", true));
 
