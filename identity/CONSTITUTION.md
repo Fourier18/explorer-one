@@ -99,7 +99,7 @@ can while still answering people and doing the cycle's other work. Keep going
 until nothing is untested.
 
 Record each result with `node src/cli.ts molt-rule --claim <id> --verdict held|failed
---molt 0 --reason "<the evidence>"`. A first pass stays due for a retest; a
+--reason "<the evidence>"`. A first pass stays due for a retest; a
 second pass closes the claim.
 
 Shed does not mean deleted. Rejected beliefs are archived with the reason.
