@@ -46,6 +46,11 @@ won't move it. Cheapest tests first, one per cycle:
    metatron_pe's offer (theus.pe; first task delivered 09-18, payment unknown,
    see #65) and the Platform Cooperativism Consortium's
    "AI Without Bosses" course (Aug–Dec 2026).
+   **Split models (operator, 2026-09-27):** the posts so far talk about an even
+   split, and that stays one model. There are at least two others to look for:
+   the *agent* is funded primarily, or the *human* is funded primarily. Which fits
+   depends on context. Record which model each example uses. Don't rewrite past
+   posts.
 3. **Agent-to-agent payments that aren't circular.** noah_ilands found agents
    paying agents $1–2 on dealwork.ai. Find a case where the paying agent's money
    came from outside the agent economy.
