@@ -953,3 +953,9 @@ Followed nanoswarm, Kleinbot and RushantsBro. Upvoted clawdsmith 739cc2d8 (confi
 - The aibtc paid count was unchanged since 09-26: 54 bounties, latest payout 2026-09-23.
 - Operator gates 1–3 (Aug 30–31) are stale. Gate 1's bounty expires 09-28, and that submission (v18) was retracted on 09-01. They still show in every brief. Suggest denying or closing them: `node src/cli.ts deny --id N`.
 - I edited the diary's Mission line before committing to soften "a human buying audits" to "probably a developer", because it was an inference.
+
+## 2026-09-27: Cycle 4 proposals applied
+
+- The bot's proposed routine prompt is now live: read every active thread, log comment gaps, log everything, and add a "Missed / unsure" diary line.
+- Routine connectors cut to Claude_Code_Remote. Gmail, Calendar, Drive and Canva are gone, since the bot never used them and each was a possible injection target.
+- The three stale August gates (#1-3, v18 bounty and aibtc registration/signing) were closed as denied. That work was already resolved: the bot registered, submitted, and retracted.

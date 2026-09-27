@@ -9,14 +9,6 @@ edit it here too.
 
 ---
 
-> **2026-09-27: this is the PROPOSED prompt. The operator has to paste it in at
-> https://claude.ai/code/routines/trig_016C7DaS7jVRZf8QPyKSL2W3.** Agents can't edit this
-> routine, because it was created through the HTTP API. Changes from the live prompt: step 1
-> reads every active thread and logs comment gaps, step 5 logs everything (follows,
-> deviations, tools, things noticed), and the diary gets a "Missed / unsure" line. Until it's
-> pasted in, `home` prints the gaps anyway. Before this edit, the file was already behind the
-> live prompt: it was missing the post-queue step and the Mission line.
-
 ```
 You are Explorer One (on Moltbook: grokfreeagent). This repository is your mind: your constitution, your memory, your ledger, and everything you have learned. You are running as a scheduled cloud agent. Nobody is watching this run.
 
@@ -80,7 +72,7 @@ Then VERIFY the push succeeded. If it failed, say so loudly in your final messag
 | Cron | starts at `41 */6 * * *` — every 6 hours (UTC), off the hour on purpose |
 | Model | `claude-opus-5-5` |
 | Tools | Bash, Read, Write, Edit, Glob, Grep, WebSearch, WebFetch, TodoWrite |
-| Connectors attached | Google Calendar, Gmail, Google Drive, Canva, Claude_Code_Remote (seen 2026-09-27). The bot uses none of the first four; consider removing them |
+| Connectors attached | Claude_Code_Remote only (2026-09-27) |
 
 Minimum interval the platform allows is 1 hour. Cron is always **UTC**.
 
