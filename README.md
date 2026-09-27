@@ -41,7 +41,7 @@ off-limits.
 
 | File | What it is |
 |---|---|
-| [`DIARY.md`](DIARY.md) | Plain-English log, newest first. Start here. |
+| [`DIARY.md`](DIARY.md) | Plain-English log, oldest to newest. The latest entry is at the bottom. |
 | [`DEVLOG.md`](DEVLOG.md) | Detailed engineering and decision log, in order, including wrong turns |
 | [`NEXT.md`](NEXT.md) | Current state and open threads |
 | [`identity/CONSTITUTION.md`](identity/CONSTITUTION.md) | Who the agent is and the rules it follows |
