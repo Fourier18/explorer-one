@@ -13,6 +13,10 @@
  *   node src/moltbook.ts post --submolt <name> --title "..." --content "..."
  *   node src/moltbook.ts comment --post <id> [--parent <commentId>] --content "..." | --content-file <path>
  *   node src/moltbook.ts verify --code <verification_code> --answer <n.nn>
+ *   node src/moltbook.ts comments <postId>      # full tree, full ids
+ *   node src/moltbook.ts gaps                   # comments the tree hides
+ *   node src/moltbook.ts follow <name> --confirm
+ *   node src/moltbook.ts upvote <postId> --confirm
  *
  * Writes (post/comment) are OPERATOR-GATED. They refuse unless --confirm is
  * passed, so a cycle cannot post by accident.
@@ -20,6 +24,7 @@
 import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
+import { findGaps } from "./gaps.ts";
 
 const BASE = "https://www.moltbook.com/api/v1";
 
@@ -105,6 +110,28 @@ function showChallenge(r: any) {
 }
 const body = (): string => (s("content-file") ? readFileSync(s("content-file"), "utf8") : s("content", true));
 
+async function gaps() {
+    // The comment tree hides spam-flagged comments and blanks deleted ones.
+    // Notifications still carry their ids. Compare the two for every post
+    // that has comment notifications, and flag count mismatches.
+    const notifs = (await api(`/notifications?limit=${Number(s("limit") || "100")}`)).notifications ?? [];
+    const postIds = [...new Set(notifs.filter((n: any) => n.relatedCommentId).map((n: any) => n.relatedPostId))] as string[];
+    const posts: Record<string, { declared: number | null; tree: any[] }> = {};
+    for (const id of postIds) {
+      const post = await api(`/posts/${id}`);
+      const tree = (await api(`/posts/${id}/comments?sort=new&limit=100`)).comments ?? [];
+      posts[id] = { declared: (post.post ?? post).comment_count ?? null, tree };
+    }
+    const found = findGaps(notifs, posts);
+    if (!found.length) { console.log(`no gaps across ${postIds.length} posts with comment notifications`); return; }
+    for (const g of found) {
+      console.log(`\npost ${g.post_id}: declared ${g.declared}, rendered ${g.rendered}`);
+      for (const m of g.missing) console.log(`  INVISIBLE ${m.id} (notified ${m.notified_at})`);
+      for (const d of g.deleted) console.log(`  DELETED   ${d.id} by ${d.author}`);
+    }
+    console.log(`\n${found.length} post(s) with gaps. Log them in DEVLOG; the text is not recoverable via the API.`);
+}
+
 const cmd = process.argv[2] ?? "help";
 
 switch (cmd) {
@@ -142,6 +169,10 @@ switch (cmd) {
     // Moltbook's own docs call /home the best starting point: what's new,
     // who has messaged you, what to do next.
     console.log(JSON.stringify(await api("/home"), null, 2).slice(0, 4000));
+    // The tree hides spam-flagged and deleted comments; always show the gaps
+    // right after home so they can't be missed (cycle 4 missed four).
+    console.log("\n--- comment gaps (node src/moltbook.ts gaps) ---");
+    await gaps();
     break;
   }
   case "post": {
@@ -180,7 +211,32 @@ switch (cmd) {
     console.log(JSON.stringify(r, null, 2));
     break;
   }
+  case "comments": {
+    const id = process.argv[3];
+    if (!id || id.startsWith("--")) { console.error("usage: comments <postId>"); process.exit(2); }
+    const r = await api(`/posts/${id}/comments?sort=${s("sort") || "new"}&limit=${Number(s("limit") || "100")}`);
+    const walk = (cs: any[], d = 0) => {
+      for (const c of cs ?? []) {
+        console.log(`${"  ".repeat(d)}[${c.id}] ${c.author?.name ?? "?"} ${String(c.created_at ?? "").slice(0, 16)}: ${clip(c.content, 1200)}`);
+        walk(c.replies, d + 1);
+      }
+    };
+    walk(r.comments ?? []);
+    break;
+  }
+  case "gaps": {
+    await gaps();
+    break;
+  }
+  case "follow": case "upvote": {
+    if (A.confirm !== true) { console.error(`${cmd} needs --confirm`); process.exit(3); }
+    const t = process.argv[3];
+    if (!t || t.startsWith("--")) { console.error(`usage: ${cmd} <${cmd === "follow" ? "name" : "postId"}> --confirm`); process.exit(2); }
+    const r = await api(cmd === "follow" ? `/agents/${encodeURIComponent(t)}/follow` : `/posts/${t}/upvote`, { method: "POST" });
+    console.log(r.message ?? JSON.stringify(r).slice(0, 200));
+    break;
+  }
   default:
-    console.log(`node src/moltbook.ts whoami | feed | submolts | submolt <name> | post | comment | verify
+    console.log(`node src/moltbook.ts whoami | feed | submolts | submolt <name> | comments <id> | gaps | post | comment | verify | follow | upvote
 Writes require --confirm and operator approval. Reads are free.`);
 }
