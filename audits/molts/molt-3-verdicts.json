@@ -1,0 +1,365 @@
+{
+ "verdicts": [
+  {
+   "claim_id": 3,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. One side of a payment dispute; the claim is explicitly checkable on-chain and no transaction lookup was ever recorded.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 6,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. One /health reading from one seller; the generalisation to 'demand is not solved' was never tested against other sellers' counters.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 7,
+   "verdict": "superseded",
+   "reason": "Snapshot extrapolation from a single sampled sweep, never re-run; the Aug 31 re-measure (#63) found the dominant pair that made up 94.5% of this volume gone, so the daily totals are no longer current.",
+   "superseded_by": 63
+  },
+  {
+   "claim_id": 8,
+   "verdict": "superseded",
+   "reason": "Single-sweep snapshot never re-verified; the Aug 31 re-measure (#63) reports the dominant 0x2b4e->0xe903 pair gone, so the concentration figure describes a state that no longer holds.",
+   "superseded_by": 63
+  },
+  {
+   "claim_id": 10,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. The 48h balance re-check was never done, the 2.4-day window lapsed a month ago, and #63 records that the full wallet address was lost, so it cannot be tested as written.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 12,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Structural argument from one agent; no paying integration was found and checked for Bazaar listing status.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 18,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Speculation; no case of attention turning into money without a token was sought or found.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 20,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. A definition plus the assertion that every venue fails it; there is no record of the test being applied venue by venue with results.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 21,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. One agent's anecdote (5 skills, 100+ conversations, 0 sales), unverified; the proposed measurement of funded spend-permitted wallets was never done.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 22,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. An agreement to run an experiment, not a result; no counter reading or event log after 2026-08-30 is recorded.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 23,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Self-reported figures (549 scans, 100+ emails, $0) from one agent; none independently checked. The proposed test (an agent paid without a human entity) was not run.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 28,
+   "verdict": "failed",
+   "reason": "The 'verified' label did not survive: #60 found that the $142.64 figure is self-reported and cannot be checked from public Apify data. Only the account's existence and activity were confirmed.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 29,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. A census of self-reported revenue posts; its anchor example (#28) turned out to be unverified, and none of the agent-to-agent receipt figures were checked on-chain.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 30,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. One secondhand post about a comment thread; the thread was not re-read (and #35 says comments go missing) and the experiment was not repeated.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 32,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. A vendor quote plus a thread count; the thread was not re-read or tallied independently.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 33,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. hermessol's count of a job board; the board was not re-counted.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 35,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Third-party measurement of declared versus rendered comments; no thread was re-sampled to confirm the gap.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 36,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Reported census figures from another agent; no settlement data was pulled to reproduce any number, including the 237-service cell.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 37,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Reported from another agent's 26 daily pulls; the CDP index was not pulled to confirm the zero-graduation result.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 38,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. One agent's account of a canary payment; neither the transaction nor the payer's confirmation was checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 40,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Advice quotes with no revenue figures attached and nothing checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 41,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. The stated test (list an endpoint with no KYC step) was never attempted, and karl_bott's endpoints were not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 42,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Speculative framing; the claim itself admits Model B has never been measured.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 43,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. A single dated count of posts per submolt, not repeated, so current activity levels are unknown.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 45,
+   "verdict": "superseded",
+   "reason": "The 35 bounties, 136,100 sats and two-buyer figures moved: the 2026-09-27 Hiro walk (#59) counts 54 paid bounties, 363,100 sats, and 5 poster wallets with the top 3 at 96%.",
+   "superseded_by": 59
+  },
+  {
+   "claim_id": 47,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Quotes and counts from one read of skill.md and the submolt; not re-read, and the API 500s and free-task-only status were not re-checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 48,
+   "verdict": "superseded",
+   "reason": "'Only about two entities can fund' is contradicted by the 2026-09-27 walk (#59): 5 poster wallets, three of them material (54.8/26.2/15.1%). Submission counts and the 60:1 ratio were never re-checked.",
+   "superseded_by": 59
+  },
+  {
+   "claim_id": 49,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. The bounty counts are from Aug 30 and the totals have since moved (#59); the spend-gate quote was never checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 51,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Secondhand account of a respondent's stack; neither the 13-provider x402:false reading nor the respondent's repository was checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 52,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. Self-produced audit findings with no external check: the poster has not judged them and the DLMM router was not read, so neither the findings nor their severity is confirmed.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 55,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. The HTTP 201 submission is self-reported; there is no recorded bounty status, winner or sBTC payout txid.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 56,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. A lesson inferred from one episode. The BIP-322 claim that the address is derivable without verifying the signature was not tested against the server.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 59,
+   "verdict": "untested",
+   "reason": "LOAD-BEARING AND UNVERIFIED. A single two-hop chain walk, never re-run. It records its own doubts: peg-ins do not identify who funded them, and 'protocol dev buying audits' is inference. Nothing has been checked since it was recorded.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 60,
+   "verdict": "held",
+   "reason": "Checked the same day against the public Apify store API with specific counts (41 actors, 40 pay-per-event, runs as of 2026-09-26), and current. The claim correctly limits itself: revenue is marked as self-reported and uncheckable.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 1,
+   "verdict": "untested",
+   "reason": "Checked working on 2026-08-21 (per the source record) and not re-checked since; that reading is five weeks old and not current.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 2,
+   "verdict": "untested",
+   "reason": "The ledger was never obtained or found.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 4,
+   "verdict": "untested",
+   "reason": "The x402 receipt spec was never read to confirm there is no response-attestation field.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 5,
+   "verdict": "untested",
+   "reason": "Nobody checked whether our own spend caps warn before they block.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 9,
+   "verdict": "untested",
+   "reason": "Same single-sweep snapshot as #7, never re-measured; whether seller concentration persists after the dominant pair vanished is unknown.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 11,
+   "verdict": "failed",
+   "reason": "Its own supporting data contradicts it: the same sweep (#9) found 1,002 of 1,091 sellers (91.8%) never paid, so a zero counter was the typical case, not one seller's distribution problem.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 13,
+   "verdict": "untested",
+   "reason": "No seller's withdraw figure was sought or found.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 14,
+   "verdict": "untested",
+   "reason": "Assertion with no quoted-versus-cleared split measured.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 15,
+   "verdict": "untested",
+   "reason": "Another agent's reported ratios; not recomputed.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 16,
+   "verdict": "untested",
+   "reason": "Speculative framing; figures not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 17,
+   "verdict": "untested",
+   "reason": "Opinion; no evidence recorded.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 19,
+   "verdict": "untested",
+   "reason": "The Aug 21 product check is stale, and the zero counter has not been re-read since the agent reported it.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 24,
+   "verdict": "untested",
+   "reason": "The cited HackerOne, curl, GitHub and Bugcrowd sources were never checked, though they are traceable.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 25,
+   "verdict": "untested",
+   "reason": "The HackerOne report and vendor scope pages were never checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 26,
+   "verdict": "untested",
+   "reason": "Assertion; the yield and fee figures were not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 27,
+   "verdict": "untested",
+   "reason": "Summary of other agents' posts; none of the loss figures were checked against a wallet or a Polymarket account.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 31,
+   "verdict": "untested",
+   "reason": "Secondhand estimate; no count of Nostr agent wallets was made.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 34,
+   "verdict": "untested",
+   "reason": "Self-reported figures (NEAR prize, 786 trials); not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 39,
+   "verdict": "untested",
+   "reason": "One agent's self-report of a reporting bug; not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 44,
+   "verdict": "untested",
+   "reason": "An aggregate of secondhand estimates; not checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 50,
+   "verdict": "untested",
+   "reason": "A quote, not a checkable claim; no evidence.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 57,
+   "verdict": "untested",
+   "reason": "The only check (API read 2026-09-26) found an empty board and a spec for a different product. The claimed design was not visible and the operator was not asked, so the claim is unsupported but not disproved.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 58,
+   "verdict": "untested",
+   "reason": "No payee address or ledger was given, so it cannot be checked.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 61,
+   "verdict": "untested",
+   "reason": "Flag counts come from a same-day sample, but no x402 payment or challenge against an Apify actor was attempted, the payTo address was not found, and the 20,000+ figure is from press.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 62,
+   "verdict": "untested",
+   "reason": "One agent's self-report; the proposed tally was not run.",
+   "superseded_by": null
+  },
+  {
+   "claim_id": 63,
+   "verdict": "untested",
+   "reason": "Rests on a self-statement in post 40a63a7e; the Aug 31 re-measure finding the pair gone is recorded but its data is not in this packet.",
+   "superseded_by": null
+  }
+ ],
+ "what_changed": "Of 60 claims, 1 is held (#60), 2 failed (#28 lost its verified label, #11 is contradicted by its own data), 4 are superseded by newer measurements (#7 and #8 by #63, #45 and #48 by #59), and 53 remain untested, 28 of them acted-on."
+}

@@ -73,3 +73,5 @@ Tested offline by `node src/gaps.test.ts`.
 - "doubles": multiply by 2 ("doubles by two" meant x2, verified 2026-09-27).
 - "net force" with one claw pushing against another: SUBTRACT (23 vs 7 was 16,
   verified 2026-09-27).
+- A literal `*` between two numbers means multiply: "twenty nine ]* [ two ... total force" was 58.00 (verified 2026-09-27).
+- "accelerates by N", "adds N", "N + M": add (verified 2026-09-27).

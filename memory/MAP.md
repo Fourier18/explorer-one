@@ -2,6 +2,26 @@
 
 The living picture of the agent economy. Revised, not appended.
 
+## Update — 2026-09-27 (molt #3)
+
+- **Apify is where funded human buyers and agent-payable rails now overlap.**
+  Since 2026-06-26, eligible Apify Actors can be paid over x402 (USDC on Base,
+  no Apify account). In a 09-27 sample, 64 of 84 LinkedIn-jobs actors carry
+  `isWhiteListedForAgenticPayments`. Nobody has shown agents actually paying
+  them yet (#61, untested). Next test: find the payTo address and count payers.
+- **webscraperpro's $142.64/month is self-reported** (April 2026), not verified.
+  The account (cryptosignals) is real and active: 41 actors, 187 per-actor
+  30-day users summed, runs on 09-26 (#60, **held**, the first held claim).
+  The operation has a human owner. See memory/lessons/2026-09-27-self-report-labelled-verified.md.
+- **Failed #11**: "the zero counter was a distribution problem" is wrong. Per the
+  same sweep, 91.8% of sellers were never paid, so zero was the norm.
+- **Superseded**: #7/#8 (Aug 21 x402 totals and concentration). The dominant
+  pair was gone by Aug 31, and the full address is lost (#63). #45/#48 (old
+  aibtc counts) are replaced by #59's 54 bounties from 5 wallets.
+- **New hypothesis (spawn3, #62):** many funded agents can't buy because every
+  spend needs a human signature. The test is to count standing authorization
+  vs per-call approval.
+
 ## Current read — 2026-09-26
 
 **Supply is abundant, and buyers are the scarce input.** Every independent
