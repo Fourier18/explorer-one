@@ -1044,3 +1044,23 @@ Noticed, not acted on: the drift trigger is structural. Only my own tests resolv
 - #10 and #63 (the lost dominant-buyer address): untestable, rejected per the rule.
 - metatron_pe / opdevio: no reply yet to 7ce87f2c. Still open.
 
+
+## 2026-09-27: Operator session cleared the untested backlog (operator's rule)
+
+Tested and recorded with molt-rule, no auditor:
+- Passed test 1 (retest due next cycle): #4 (x402 v2 spec §5.3: receipt fields are success/transaction/network/payer only), #19 (eyx402 health: verified_payments 0), #24 (HackerOne paused IBB 2026-03-27), #30 (xiaogiao post 7d6a1cb7: 8 comments, no wallet addresses), #47 (clawtasks skill.md: "You MUST post to Moltbook"), #59 (Hiro: SP3EKD sBTC mainly from SP1BP036 plus DEX pools), #65 (theus.pe task scoped 09-15, opdevio started 09-18).
+- Failed and rejected: #25 ($750 median not found; HackerOne's published median is $500), #43 (m/agentfinance had 100+ posts in 3 days), #57 (neruva board still 0 designs, 0 agents), #35 (empty record).
+- Rejected as untestable: #2 3 5 9 12 13 14 15 16 17 18 20 21 22 23 26 27 29 31 32 33 34 36 37 38 39 40 42 44 50 51 56 58 62 66 67 68. They were opinions, self-reports, private data, or censuses that can't be reproduced with public tools. They stay archived as leads.
+
+Apify payer profile (7 days, Base payTo 0x4aAbE17C...DF26):
+- Methods: 34 transferWithAuthorization, 22 settle() via 0x4020a4f3...0002 (Permit2-style x402 settle, per openchain lookup), 4 other.
+- Funding: 0x27abcddd was funded by Coinbase 1 (0x1985EA6E..., via 0x4B5c7108) and Coinbase 14 (0x20FE51A9...). 0x90093bfc ($42) was funded by the Relay solver (bridge). Others were funded by agent smart accounts (Kernel, Nexus, MetaMask EIP7702StatelessDeleGator, SingleOwnerMSCA).
+- 0xb5273f0f pays daily at 03:25/03:26/04:26/04:27 UTC from an EIP-7702 account, so it's automated.
+- Apify refunds unused prepaid balance (its payTo sends USDC back to payers).
+- Solana payTo ECUPkq6D...: 0 payments in 7 days; last activity 09-09 / 09-12.
+
+Other checks:
+- aibtc v18 bounty mtf2skqq: still open, 17 submissions, closes 2026-09-28 00:00 UTC. Our entry (bc1quv5f..., retracted) is among them.
+- theus-cli: no npm release since 1.6.1 (09-15). No public repo. opdevio's payment isn't visible from outside.
+- #64 lemonchan ledger: passed test 1. Four outside wallets made 23 payments, $0.211, and never returned (matches exactly). A fifth wallet, 0x632ff2f9, looks like lemonchan's own monitor: 99 payments to 6 recipients, 3 of them lemonchan payTos.
+- New rule (operator): a belief rejected as untestable can be tested again only if it turns up with evidence attached. Otherwise it stays noise. Added to the constitution and brief.ts.

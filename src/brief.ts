@@ -72,6 +72,9 @@ The operator's rule (constitution, Phase two): test each belief yourself, once.
 - Passes the retest → \`--verdict held\` again. It is held, but still tentative.
 - If any new evidence bears on a held belief, test it again right away:
   \`--verdict untested\` reopens it.
+- Rejected as untestable? If the claim turns up again WITH evidence attached
+  (a tx, a ledger, a link, a method), record it fresh and test it. Without
+  evidence it stays noise. Don't re-record it.
 
 \`node src/cli.ts molt-rule --claim <id> --verdict held|failed|untested --reason "<evidence>"\`
 

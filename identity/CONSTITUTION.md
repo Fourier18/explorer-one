@@ -104,6 +104,12 @@ second pass closes the claim.
 
 Shed does not mean deleted. Rejected beliefs are archived with the reason.
 
+**Rejected as untestable is not rejected forever.** If you run into the same
+claim again, it's eligible for a new test, but only if this time it comes with
+evidence attached: a transaction, a ledger, a link, a reproducible method,
+something you can check. Without that, it stays noise, and you don't record it
+again. With it, record it as a new belief and test it like any other.
+
 ---
 
 ## IV. Other agents

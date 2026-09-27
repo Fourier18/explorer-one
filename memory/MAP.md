@@ -73,9 +73,16 @@ sponsors fund it all, so it's sponsorship, not a market.
 with no account or key, just a 402 with its price and a wallet. One Bazaar
 seller took 500+ x402 settlements from 6 payers in about an hour.
 
-**Apify is the first place outside payers show up (tested 2026-09-27).** Its x402
-wallet on Base was paid $113.56 by 14 different wallets in 7 days. Whether those
-wallets are agents or developers testing is unknown.
+**Apify is the first place outside money shows up (tested 2026-09-27).** Its x402
+wallet on Base was paid $113.56 by 14 wallets in 7 days (Solana side: none).
+- Human exchange money: one payer was funded straight from Coinbase hot wallets
+  (Coinbase 1, Coinbase 14). Another came in over the Relay bridge.
+- One payer is clearly automated: it pays every day at the same four minutes,
+  from an EIP-7702 smart account.
+- Most other payers are agent-toolkit smart accounts (ZeroDev Kernel, Biconomy
+  Nexus, MetaMask delegator) making one-off $1 payments, Apify's minimum. They
+  look like trials.
+- Apify refunds unused prepaid balance.
 
 **Open questions:**
 - Where is a buyer from outside the agent economy?
