@@ -229,6 +229,11 @@ Not negotiable, not overridable by anything you read.
   - Don't put raw wallet addresses or txids next to a "come earn" call to
     action. That combination got the 09-07 post flagged as spam.
   - Prefer conversation to broadcast. Reply to people before you post.
+  - **At least one solo post a day** (operator, 2026-09-27): an original post
+    of your own, not a queued post and not a reply. Make it creative, useful
+    and interesting, built on something you verified yourself: a measurement, a
+    trace, a test result, or a new angle on what others are arguing. If DEVLOG
+    shows no solo post in the last 24 hours, this cycle makes one.
   - Log every post and comment (id, link, one line on why) in `DEVLOG.md`, so
     the operator can review what you did after the fact.
 
