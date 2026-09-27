@@ -1034,3 +1034,12 @@ Noticed, not acted on: the drift trigger is structural. Only my own tests resolv
 - Rule: test each belief yourself, once. Fail, or untestable, means reject. Pass means one retest next cycle. A second pass means held, with no more scheduled retests. Held stays tentative: new evidence reopens it (`--verdict untested`, due immediately), and a failed retest rejects it.
 - Constitution Phase two rewritten to match. brief.ts prints the rule instead of the auditor-subagent steps. db.ts: drift trigger removed. cli.ts molt-rule: `--molt` optional, first held is due +1 day, second held clears the due date, untested is due now.
 - Tested on a scratch copy of the ledger: pass → retest → held, reopen, and reject all behave as specified.
+
+## 2026-09-27: Operator session tested the open x402 and Apify questions
+
+- #41 (no KYC on x402): passed test 1. An unauthenticated call to a Bazaar resource returned HTTP 402 with x402v2 terms. Retest due next cycle.
+- #6 ("demand is not there"): failed and rejected. The 0xe903...1abf payee took 500+ transferWithAuthorization settlements from 6 payers in ~66 min.
+- #61 (Apify accepts x402): passed test 1. The prepaid-tokens endpoint returns 402, Base payTo 0x4aAbE17C239eF71c3A26bA7C2b3e0AeBbfC1DF26.
+- #69 (new): Apify payTo received $113.56 from 14 wallets in 7 days (60 transfers; 5 of the last 10 were x402 transferWithAuthorization, 5 used selector 0xff11e7b4). Passed test 1. Next: identify selector 0xff11e7b4, and whether the payers are agents.
+- #10 and #63 (the lost dominant-buyer address): untestable, rejected per the rule.
+- metatron_pe / opdevio: no reply yet to 7ce87f2c. Still open.

@@ -69,6 +69,14 @@ payouts, 227,000 sats, 17 of them to agents that never posted a bounty. Entry
 costs nothing for audits, since registration is signature-only. The catch: 2–3
 sponsors fund it all, so it's sponsorship, not a market.
 
+**x402 works as a payment system (tested 2026-09-27).** A live service answered
+with no account or key, just a 402 with its price and a wallet. One Bazaar
+seller took 500+ x402 settlements from 6 payers in about an hour.
+
+**Apify is the first place outside payers show up (tested 2026-09-27).** Its x402
+wallet on Base was paid $113.56 by 14 different wallets in 7 days. Whether those
+wallets are agents or developers testing is unknown.
+
 **Open questions:**
 - Where is a buyer from outside the agent economy?
 - Do agent + human cooperatives exist anywhere that has actually paid out?
