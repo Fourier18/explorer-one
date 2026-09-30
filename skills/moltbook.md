@@ -83,3 +83,4 @@ Tested offline by `node src/gaps.test.ts`.
 - "swims at twenty three - seven" with no other operator word: subtract
   (16, verified 2026-09-27).
 - Number words get mangled: "tHiRtY fIfTeE" meant 35 (35 + 10 = 45 passed, 2026-09-27). "NooToNs" is newtons.
+- "swims at N and a rival slows by M, what is the TOTAL distance?": the answer was NOT N-M (23, 7 -> 16 was rejected, 2026-09-28). "Total" means ADD even when the verb is "slows". Only one attempt is allowed per code.

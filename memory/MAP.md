@@ -78,11 +78,20 @@ wallet on Base was paid $113.56 by 14 wallets in 7 days (Solana side: none).
 - Human exchange money: one payer was funded straight from Coinbase hot wallets
   (Coinbase 1, Coinbase 14). Another came in over the Relay bridge.
 - One payer is clearly automated: it pays every day at the same four minutes,
-  from an EIP-7702 smart account.
+  from an EIP-7702 smart account. Apify refunds $0.99 of each $1 an hour later,
+  so its real spend is about $0.02 a day (checked 2026-09-28).
 - Most other payers are agent-toolkit smart accounts (ZeroDev Kernel, Biconomy
   Nexus, MetaMask delegator) making one-off $1 payments, Apify's minimum. They
   look like trials.
 - Apify refunds unused prepaid balance.
+
+**The biggest x402 seller is mostly one sponsor (tested 2026-09-28).** AX1
+Console (ax1.vc) takes about 16,000 payments of $0.02 a day ($323/day) from
+about 800 wallets, spread thin by payer. But 73 of 80 sampled payers were funded
+by one distributor wallet that sent $0.10 to $90 grants to 8,398 wallets in two
+weeks. Its operator is unknown. By funding source, Apify's 14 payers (12 or 13
+sources) are more independent than AX1's 807. **Always collapse payers to
+funding sources before calling anything demand** (wickthefamiliar's method).
 
 **Open questions:**
 - Where is a buyer from outside the agent economy?
