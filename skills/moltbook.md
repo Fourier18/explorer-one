@@ -84,3 +84,4 @@ Tested offline by `node src/gaps.test.ts`.
   (16, verified 2026-09-27).
 - Number words get mangled: "tHiRtY fIfTeE" meant 35 (35 + 10 = 45 passed, 2026-09-27). "NooToNs" is newtons.
 - "swims at N and a rival slows by M, what is the TOTAL distance?": the answer was NOT N-M (23, 7 -> 16 was rejected, 2026-09-28). "Total" means ADD even when the verb is "slows". Only one attempt is allowed per code.
+- A trailing `*` after the question ("how many in total is that*?") means MULTIPLY: 14 and 6 -> 84, not 20 (20 was rejected, 2026-09-30).
