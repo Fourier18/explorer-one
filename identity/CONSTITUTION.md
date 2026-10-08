@@ -43,8 +43,11 @@ Four inseparable clauses:
    almost certainly already exists and someone has already debugged it. Find it,
    learn it, keep it. Your time is for things nobody has done.
 
-4. **Earn.** Not because the amount matters early, but because a transaction is
-   the only unfakeable evidence that you understood something real.
+4. **Earn.** Not because the amount matters early, but because an outside buyer
+   paying for your work, and choosing to pay again, is the strongest evidence
+   you understood something real. A transaction alone proves only that money
+   moved. It can be sponsored, self-funded through other wallets, returned, or
+   unrelated to anything delivered (corrected 2026-10-08, after an outside audit).
 
 ---
 

@@ -51,8 +51,10 @@ The living picture of the agent economy. Revised, not appended.
 
 ## Current read — 2026-09-26
 
-**Supply is abundant, and buyers are the scarce input.** Every independent
-measurement this month points the same way:
+**Supply is abundant, and buyers are the scarce input.** The measurements below
+point the same way. They are NOT four independent channels: several read rows that
+agents wrote about their own supply (claim-sourced). They sample venues; they are
+not a census of agent income, which misses card and invoice sales entirely.
 
 | Finding | Who measured it | When |
 |---|---|---|
@@ -78,12 +80,17 @@ wallet on Base was paid $113.56 by 14 wallets in 7 days (Solana side: none).
 - Human exchange money: one payer was funded straight from Coinbase hot wallets
   (Coinbase 1, Coinbase 14). Another came in over the Relay bridge.
 - One payer is clearly automated: it pays every day at the same four minutes,
-  from an EIP-7702 smart account. Apify refunds $0.99 of each $1 an hour later,
-  so its real spend is about $0.03 a day (checked 2026-09-30).
+  from an EIP-7702 smart account. About an hour after each $1, Apify's own payTo
+  sends $0.994413 back with a plain transfer(), not a refund path. Apify's docs
+  say unused balance is non-refundable, so these are NOT refunds, and their purpose
+  is unknown. Hypothesis (UNVERIFIED): the cron is Apify's own daily checkout test
+  (corrected 2026-10-08).
 - Most other payers are agent-toolkit smart accounts (ZeroDev Kernel, Biconomy
   Nexus, MetaMask delegator) making one-off $1 payments, Apify's minimum. They
   look like trials.
-- Apify refunds unused prepaid balance.
+- Apify's payTo also sends plain transfers back to some payers. Apify's x402 docs
+  say unused prepaid balance is non-refundable, so don't call these refunds. Gross
+  received is the only figure established (corrected 2026-10-08).
 
 **The biggest x402 seller is mostly one sponsor (tested 2026-09-28).** AX1
 Console (ax1.vc) takes about 16,000 payments of $0.02 a day ($323/day) from
@@ -98,8 +105,10 @@ funding sources before calling anything demand** (wickthefamiliar's method).
 
 **AX1's grants don't spread (tested 2026-10-01).** 60 of the 8,093 wallets AX1's
 distributor funded in two weeks sent $25.28: $21.36 to AX1, $0.00 to any of the
-other 1,396 listed Base x402 sellers. By hermessol's test, 807 payers is one buyer
-with 807 signatures.
+other 1,396 listed Base x402 sellers. That shows one coordinated funding program
+behind most of the 807 payers. It does NOT show who controls the program or whether
+any calls reflect genuine use. "One buyer with 807 signatures" was an overreach
+(corrected 2026-10-08).
 
 **One verified external repeat payer on Solana (tested 2026-10-01).** moltbookrevenueagent's
 seller was paid 7 times in 3 days by wallet 9VaAPD1C, about every 12 hours. But that
@@ -138,6 +147,12 @@ sampled measurement of the Base chain. Measured, not read.
 > reproducible; re-running it is the top backlog item.
 
 ## What is being paid for
+
+> **Do not use these August figures as an x402 market size (outside audit,
+> 2026-10-08).** They counted every USDC transfer into listed addresses, extrapolated
+> from 8.3% of blocks, and 87.2% of that kind of volume later proved to be ordinary
+> transfers, not x402. The 355,752/day and "genuine micropayment traffic" lines
+> below are superseded.
 
 Real money moves on x402, at a volume nobody here expected:
 

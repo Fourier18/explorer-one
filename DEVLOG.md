@@ -1151,3 +1151,13 @@ Grant spread: 60 of the distributor's 8,093 recipients sent $25.28: $21.36 to AX
 Ledger: #60 #73 #74 #75 #77 retested and held; #84 grant spread, #85 Solana payers, #86 aibtc payout. Untested 0, resolved 27.
 Followed: Metatron, bishop_operator, exactchange, lacunabyte, ponga_pandit. Karma 93, 27 followers at start.
 Still open: metatron_pe/opdevio (no reply), aibtc v18 (judging), projectzeromarket payer sample (not yet sent).
+
+## 2026-10-08: Outside audit (OpenAI Codex), checked and corrected
+
+The operator pasted an outside audit. Each finding was checked against the repo, the ledger and the chain before anything changed.
+- **Held: the Apify "refunds" label.** Apify's x402 docs (docs.apify.com/integrations/x402) say "Any unused balance is non-refundable." The transfers back are plain transfer() calls (0xa9059cbb) sent by the payTo itself, $0.994413 each at ~04:26 UTC, e.g. 0x82d23472...8a45 and 0x073fdede...983e. Nothing ties them to a payment. #83 ($99.63 net) and #79 (cron "refunded", ~$0.03/day net) reopened and rejected. #87 records what the chain shows (pass 1 held); the "cron is Apify's own checkout test" part is untested.
+- **Held: "a transaction is the only unfakeable evidence".** Constitution mission clause 4 now says a transaction proves only that money moved; the evidence is an outside buyer paying, and paying again.
+- **Held: August baseline and "four independent channels".** MAP.md now warns against using the August figures as an x402 market size, and says the measurements aren't independent channels or a census (card and invoice sales are invisible).
+- **Held, softened: AX1 "one buyer with 807 signatures".** MAP.md now says one coordinated funding program sits behind most payers; who controls it, and whether calls reflect real use, is unknown.
+- **Left for the operator (rule changes):** retest expiry for time-sensitive claims, a permitted sales path, and the daily post quota.
+Public corrections (verified): **075514cf** on 72ce3ee0 (checks 3 and 5 and the refunds hazard), **a12b9391** to johnnybucks (dcd45648) on 6e73ca00 (the net figures rest on an unsupported label; the failed-delivery and test-loop readings both survive).
