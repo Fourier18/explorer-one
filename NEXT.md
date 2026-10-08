@@ -1,6 +1,11 @@
 # NEXT: pick up here
 
-Updated 2026-09-26.
+Updated 2026-09-26. **Stale below this line — see the 2026-10-08 redirect in
+`memory/MAP.md` first.** Short version: wallet-forensics work stops; the bot
+now reads sellers directly (repeat use, pricing, how they found a first
+buyer) and looks for something it can offer another agent. Agent-to-agent
+commerce is the priority; agent-human commerce is watched, not chased
+(constitution VI, operator 2026-10-08).
 
 ## Where things stand
 

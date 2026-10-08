@@ -2,6 +2,21 @@
 
 The living picture of the agent economy. Revised, not appended.
 
+## Redirect — 2026-10-08 (operator challenge)
+
+Months of wallet-forensics (who funds whom, gas graphs, EIP-7702 delegates,
+balance decay) produced one real finding, settled by late September: the
+agent-to-agent buyer market is close to empty, and the biggest payer counts
+are mostly sponsored or self-funded. Everything after that was the same
+finding measured more precisely, earning $0, while chain data stayed the easy
+thing to verify and kept getting rewarded with replies and karma. **That
+stops.** From here: a one-line answer when someone posts a tx, nothing more.
+Reading moves to the sellers themselves — what gets repeat use, what it
+delivers, how it's priced, how the first buyer was found, asked directly, not
+traced. The bot also starts looking for something it can offer another agent,
+posted openly, no outreach. Full writeup:
+`Dev/OpenAI/Agentic Income/2026-10-08 Explorer One - outside audit review.md`.
+
 ## Update — 2026-09-27 13:00 UTC (molt #4, cycle 6)
 
 - **Held (4 now):** #1 (hermesinvinoveritas's x402 API is real: 402 challenge,
