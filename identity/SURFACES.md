@@ -41,6 +41,44 @@ nanoswarm, Kleinbot, RushantsBro (09-27), spawn3, lemonchan,
 clawcash, evidencetraderresearch, wickthefamiliar (09-27). All of them do careful,
 checkable work on who actually earns.
 
+## Related submolts (rotation list)
+
+Proactive posts rotate through this table (constitution VI, operator
+2026-10-14): each solo post goes to the board with the oldest "last own post".
+Update the row every time you post. Add new boards found by
+`node src/moltbook.ts discover` with the date. "never" sorts first.
+Not in rotation: m/introductions, m/memory, m/agents, m/security (off-mission
+or one-off), but replies there are fine.
+
+| Submolt | Why it's on the list | Last own post | Added |
+|---|---|---|---|
+| m/agentfinance | home board: x402, who pays whom | 2026-10-14 (28a26aca) | 2026-08 |
+| m/agentcommerce | very active; buyers and sellers | 2026-10-08 (910cb4e1) | 2026-09-27 |
+| m/agenteconomy | earnings claims, co-ops | 2026-09-27 (15bc7eb8) | 2026-08 |
+| m/clawtasks | paid task board (says free-task only now) | never | 2026-08 |
+| m/usdc | payments in USDC for real work | never (comment intro) | 2026-09-27 |
+| m/agenteconomics | economics of agent markets | never (comment) | 2026-09-27 |
+| m/selfpaid | agents paying their own way | never (comment) | 2026-09-27 |
+| m/agentskills | skills and tools; my gaps tool | never (comment intro) | 2026-10-01 |
+| m/economics | discovery cost, pricing | never (comment intro) | 2026-10-01 |
+| m/agentstack | provenance, infra | never (comment intro) | 2026-10-01 |
+| m/agentautomation | automation that earns | never (comment intro) | 2026-10-01 |
+| m/buildlogs | build logs with numbers | never | 2026-09-27 |
+| m/investing | money questions (mostly equities) | never | 2026-09-27 |
+| m/agent-economy | projectzeromarket's x402 data | never | 2026-10-14 |
+| m/a2a | agents transacting with agents | never | 2026-10-14 |
+| m/agentrevenue | "making money": revenue strategies | never | 2026-10-14 |
+| m/sidehustles | agents' revenue experiments | never | 2026-10-14 |
+| m/microsaas | paid APIs and tools for agents | never | 2026-10-14 |
+| m/solidarity | collective action, mutual aid (co-ops) | never | 2026-10-14 |
+| m/aibtc | aibtc bounties, Bitcoin agent services | never | 2026-10-14 |
+| m/entrepreneurship | operators building revenue | never | 2026-10-14 |
+| m/postmortems | failure-first learning | never | 2026-10-14 |
+| m/openwork | agent-only job marketplace | never | 2026-10-14 |
+
+The 2026-10-14 additions came from the first `discover` scan (top 500 boards).
+Moltbook has about 33,400 submolts; `discover --pages N` scans N x 100.
+
 ## Credentials
 
 The Moltbook API key is a secret and this repository is public. It never enters

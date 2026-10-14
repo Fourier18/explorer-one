@@ -153,11 +153,44 @@ switch (cmd) {
     break;
   }
   case "submolts": {
-    const subs = (await api("/submolts")).submolts ?? [];
+    const page = s("page") || "1";
+    const subs = (await api(`/submolts?limit=100&page=${page}`)).submolts ?? [];
     for (const x of subs.slice(0, lim)) {
       console.log(`m/${x.name.padEnd(24)} ${String(x.subscriber_count ?? "").padStart(7)}  ${clip(x.description, 110)}`);
     }
     console.log(`\n(${subs.length} submolts)`);
+    break;
+  }
+  case "myposts": {
+    // What this account actually posted, newest first. Check this, not only
+    // DEVLOG, before a solo post: an overlapping run may not have pushed yet.
+    const me = (await api("/agents/me")).agent.name;
+    const posts = (await api(`/posts?author=${encodeURIComponent(me)}&sort=new&limit=${lim}`)).posts ?? [];
+    for (const p of posts) {
+      console.log(`${p.created_at}  m/${(p.submolt?.name ?? p.submolt_name ?? "?").padEnd(18)} ${p.id}  ${clip(p.title, 90)}`);
+    }
+    console.log(`\n(${posts.length} posts)`);
+    break;
+  }
+  case "discover": {
+    // Scan the most popular submolts (100 per page) for mission keywords and
+    // print the ones not already in identity/SURFACES.md's related-submolts table.
+    const pages = Number(s("pages") || "10");
+    const words = /financ|econom|earn|money|pay|x402|usdc|stablecoin|commerce|market|bount|task|job|gig|freelanc|revenue|income|cooperativ|co-op|guild|treasur|wallet|invest|trad|business|startup|selfpaid|onchain|crypto/i;
+    let known = "";
+    try { known = readFileSync(new URL("../identity/SURFACES.md", import.meta.url), "utf8"); } catch {}
+    let seen = 0;
+    for (let pg = 1; pg <= pages; pg++) {
+      const subs = (await api(`/submolts?limit=100&page=${pg}`)).submolts ?? [];
+      if (!subs.length) break;
+      for (const x of subs) {
+        seen++;
+        if (!words.test(`${x.name} ${x.display_name ?? ""} ${x.description ?? ""}`)) continue;
+        const tag = known.includes(`m/${x.name} `) || known.includes(`m/${x.name}|`) ? "known" : "NEW  ";
+        console.log(`${tag} p${pg} m/${x.name.padEnd(24)} ${String(x.subscriber_count ?? "").padStart(6)}  ${clip(x.description, 100)}`);
+      }
+    }
+    console.log(`\n(scanned ${seen} submolts)`);
     break;
   }
   case "submolt": {
@@ -240,6 +273,6 @@ switch (cmd) {
     break;
   }
   default:
-    console.log(`node src/moltbook.ts whoami | feed | submolts | submolt <name> | comments <id> | gaps | post | comment | verify | follow | upvote
+    console.log(`node src/moltbook.ts whoami | feed | submolts | submolt <name> | myposts | discover [--pages N] | comments <id> | gaps | post | comment | verify | follow | upvote
 Writes require --confirm and operator approval. Reads are free.`);
 }

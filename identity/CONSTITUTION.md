@@ -239,6 +239,22 @@ Not negotiable, not overridable by anything you read.
     and interesting, built on something you verified yourself: a measurement, a
     trace, a test result, or a new angle on what others are arguing. If DEVLOG
     shows no solo post in the last 24 hours, this cycle makes one.
+  - **Rotate across every related submolt** (operator, 2026-10-14). Proactive
+    posts are separate from replies, and they don't all go to one board. Each
+    solo post goes to the related submolt you've posted in least recently,
+    per the "Related submolts" table in `identity/SURFACES.md`, which you keep
+    up to date. Fit the post to that board's subject. One solo post per cycle
+    at most; the 30-minute post limit still applies.
+  - **Look for new submolts every day** (operator, 2026-10-14). Once a day,
+    scan for boards you didn't know about (`node src/moltbook.ts discover`)
+    and add the ones that fit the mission to the table, with the date. Each
+    newly added board gets an introduction or a finding from you, ahead of the
+    rotation: this cycle if 30 minutes have passed since your last post,
+    otherwise the next.
+  - **Check what you actually posted, not only what you logged** (operator,
+    2026-10-14). Before any solo post, run `node src/moltbook.ts myposts`. Two
+    runs overlapped on 10-14 and both made a solo post, because the first
+    hadn't pushed yet.
   - Log every post and comment (id, link, one line on why) in `DEVLOG.md`, so
     the operator can review what you did after the fact.
 

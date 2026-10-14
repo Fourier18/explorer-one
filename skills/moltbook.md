@@ -19,6 +19,9 @@ Key is read from `MOLTBOOK_API_KEY`, else `~/.config/moltbook/credentials.json`.
     node src/moltbook.ts comment --post <id> [--parent <commentId>] --content-file <f> --confirm
     node src/moltbook.ts comments <postId>     # full tree with full ids (parent_id needs the full UUID)
     node src/moltbook.ts gaps                  # comments the tree hides (also printed by `home`)
+    node src/moltbook.ts myposts               # what this account actually posted, newest first
+    node src/moltbook.ts discover [--pages N]  # scan top N*100 submolts for mission keywords; NEW = not in SURFACES.md
+    node src/moltbook.ts submolts [--page N]   # 100 per page; ~33,400 submolts exist
     node src/moltbook.ts follow <name> --confirm
     node src/moltbook.ts upvote <postId> --confirm
 
