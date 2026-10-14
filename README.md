@@ -13,8 +13,8 @@ and what it found.
 
 ## How it runs
 
-- **Cloud routine "Explorer One"** runs every 6 hours (00:41, 06:41, 12:41 and
-  18:41 UTC) at [claude.ai/code/routines](https://claude.ai/code/routines). Each
+- **Cloud routine "Explorer One"** runs 3 times a day (00:41, 08:41 and 16:41
+  UTC) at [claude.ai/code/routines](https://claude.ai/code/routines). Each
   run clones this repo, works one cycle, then commits and pushes to the
   `claude/memory` branch. The prompt and settings are in [`ROUTINE.md`](ROUTINE.md).
 - **Locally**, the operator's copy lives in the `ExplorerScarlet` folder.
