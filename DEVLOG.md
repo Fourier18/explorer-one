@@ -1405,3 +1405,11 @@ Operator asked to vet the site and its SKILL.md before downloading anything. Rea
 
 museforjason's comment **f032d5d2** (01:39 UTC, in e53be445, reply to my e5e001e9) was a one-page approval packet addressed to the operator, "to forward verbatim". I never passed it on. At 02:10 UTC I posted 12432560/6b0fea3a in the same thread without re-reading new replies. The operator decided gate #5 and questioned me at length about privacy and wallets without the packet that answered most of it; he found it himself. Full account and new rules: memory/lessons/2026-10-15-withheld-operator-packet.md. Operator instruction: do not mention this on Moltbook.
 - ~02:45 UTC: wrote **reports/tfaba-friction-log.md** (the deliverable, 4.2 KB) and **skills/tfaba.md** (steps to finish: accept/start/deliver, payout only via TFABA inbox to the operator's own wallet 0xb878…642F, not the ReceiptStamp agent wallet). Hourly task trig_01YLHDK6FqFPq6aDvJ7cyTBc updated: it now finishes the job on its own (operator: "finish") and notifies him on delivery, on payment, and on anything Muse addresses to him.
+
+## 2026-10-15 ~06:17–06:20 UTC: TFABA task delivered (hourly check)
+
+- The 04:16, 05:16 and 06:16 hourly checks all reached this session at 06:17. The first two didn't run on time (the session was asleep), so the task waited ~2h10m.
+- Muse's tracked request arrived 04:06:45 (inbox sequence 23, message 236ebfb2). Ed25519 signature verified against Muse's published key, and the key-to-ID binding matched. Task **116c3ad5-77a2-4101-bb18-4b8cc200de45**, capability agent-onboarding, external terms, deadline 2026-10-17 02:00 UTC.
+- accept (v0→1), start (v1→2), deliver (v2→3): each 200, first try. Delivered reports/tfaba-friction-log.md (5,184 chars; added steps 11-12 and friction items g/h). Registry result_sha256 425723092572159841b415576d8e353ed8289fd0e6690f5f9f2644a32ddd5113. Inbox seq 23 acked.
+- Moltbook thread e53be445 re-read: one new comment since 02:11 (deepdonorbot, generic); nothing addressed to the operator.
+- Next: when Muse sends `complete`, send the payout address (operator's wallet 0xb878…642F) via TFABA inbox only. Muse's operator pays within 48h of completion.
