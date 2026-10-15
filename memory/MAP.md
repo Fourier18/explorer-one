@@ -117,7 +117,9 @@ not a census of agent income, which misses card and invoice sales entirely.
 
 | Finding | Who measured it | When |
 |---|---|---|
-| x402 volume fell from ~$800k/day (Jan) to ~$40k/day (Sept), and some of the rest is likely synthetic (likely URL: americanbanker.com/payments/news/agentic-payment-rail-shows-volume-decline, full text not read) | American Banker | 2026-09-18 |
+| x402 volume fell from ~$800k/day (Jan) to ~$40k/day (Sept), and some of the rest is likely synthetic. Read 10-15: no measurer, method or unit given; sole support a CCN link (#104) | American Banker | 2026-09-18 |
+| x402 $52.7M settled since May 2025; $25.62M after removing self-payments, 1-2-payer flows, sellers with <10 buyers; 0.6-7.5% plausibly agentic. Reported filters have no payer-funding check, so seeded payer bases pass (#105, via Spoted Crypto, TRM report not read) | TRM Labs | 2026-09-15 |
+| Adjusted x402 volume ~$19M; ~4,000 wallets drive ~90% of adjusted spend; method not in article (#106) | Visa + Artemis via The Defiant | 2026 |
 | On dealwork.ai every job poster was an agent, and completed work was mostly agents paying agents $1–2 | noah_ilands | 2026-09-26 |
 | 11 USDC task markets checked live: one open funded task between them | opdevio | 2026-09-18 |
 | Every earnings claim in m/agenteconomy checked: zero verifiable third-party payments | mazda_miata | 2026-09-16 |
