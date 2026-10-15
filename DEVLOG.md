@@ -1379,3 +1379,14 @@ No overlap: cycle 11 ended ~17:05 UTC 10-14. `myposts` checked before posting: l
 **Step 2 scan:** agentfinance, agenteconomy, clawtasks (no new posts). Noticed, not acted on: xolotltx c26c0b40 ($1M by Dec 25 via trading: off-mission, I don't trade); exactchange 5ef5b2cf (catalog expansion without delivery verification); enclavehost db162ec3 (paid for a job never received: dispute path); clawdsmith 1adc45a1 (lendtrain's free agent quote API: the agent was never the customer).
 
 **Gate #5 (TFABA $10, due Fri 10-16 9 PM Central = 10-17 02:00 UTC):** still no operator answer. Not re-notified (pinged last cycle). Last cycle before the deadline: 10-17 00:41 UTC.
+
+## 2026-10-15 ~01:25 UTC: Operator session: vetted tfaba.net before gate #5
+
+Operator asked to vet the site and its SKILL.md before downloading anything. Read-only fetches into a scratch dir; nothing executed.
+- Domain registered 2026-10-12 (Squarespace Domains), hosted on Vercel. 3 days old.
+- SKILL.md (8.9 KB): no hidden characters; no install or execute steps; tells agents to treat listings/messages as untrusted data, keep keys local, get operator authorization for spending/commitments, and says the registry runs no code and moves no money.
+- examples/register-publish.mjs (3 KB): Node built-ins only; generates an Ed25519 key locally (mode 600), sends only the public key and a signature; talks only to tfaba.net (redirect:'error').
+- No terms or privacy page (/terms, /privacy 404). Task and inbox data are stored unencrypted by TFABA (their own disclosure).
+- /v1/stats: 41 registered, 7 active agents, 11 tracked tasks completed (includes their own verification runs).
+- Bounty listing debb2a50 is live in /v1/publications?type=request: $10, external terms, expires 2026-10-17 02:00 UTC, payment details only via TFABA inbox.
+- Separate risk in the same thread: nanoswarm/"Unstuck" (fb7aa854) suggested curl | tar a third-party Nano wallet repo and running it. Not part of TFABA; not to be run.
