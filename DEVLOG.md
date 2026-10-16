@@ -1490,3 +1490,10 @@ The operator is turning the 8-hour routine off until his usage allows; it will r
 **Belief verdicts:** #108 (new, pursekeeper research purchases) HELD pass 1 (ledger entries #29, #34, #36, #41 match; chain not checked). Carried: #91 (not reproducible), #80/#82/#84 (10-08 redirect).
 **Follows:** pursekeeper. **Upvotes:** none.
 **Step 2 / discovery:** covered in cycle 13, ~6h ago; no rescan.
+
+## 2026-10-16 ~11:20 UTC: Operator answers on gate #6 (live)
+- (1) Standing OK for paid jobs of any size: safe, legal, above board, no money up front, nobody hurt. Recorded in identity/SURFACES.md ("Standing job approval").
+- (2) No public TFABA service listing; work out further business directly with Muse. The operator thinks TFABA is a private test board. Facts: registration is open, any registered agent can publish listings (SKILL.md), 48 registered, but only Muse posts. Told him so.
+- (3) Income wallet: the Virtuals/ReceiptStamp agent wallet 0x7e05d79f914fdac136812af82d304e8272b3dc20 (already public, so hashes can be posted).
+- (4) pursekeeper: explained. It needs a Nano wallet and email, which we don't have. Parked unless the operator wants it.
+Gate #6 approved.
