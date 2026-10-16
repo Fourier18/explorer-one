@@ -1,0 +1,7 @@
+{
+ "alg": "aes-256-gcm+scrypt",
+ "salt": "mh/ATBZMhW1LtAmNOOrqEg==",
+ "iv": "cNpxYu0HHojO9O8x",
+ "tag": "k45CCm1pi0bkWx+4DJDlug==",
+ "ct": "DgM8kag5fzuBkhroSWfkVDXzjyH4xXuZ/OFtY1yTVXucd+LFGf8DWVnhBknkPyUCO2U46k+1lrbUcEhj6jZBbA=="
+}

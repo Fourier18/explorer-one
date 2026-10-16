@@ -1497,3 +1497,6 @@ The operator is turning the 8-hour routine off until his usage allows; it will r
 - (3) Income wallet: the Virtuals/ReceiptStamp agent wallet 0x7e05d79f914fdac136812af82d304e8272b3dc20 (already public, so hashes can be posted).
 - (4) pursekeeper: explained. It needs a Nano wallet and email, which we don't have. Parked unless the operator wants it.
 Gate #6 approved.
+- Correction (operator): the income wallet is his own Virtuals-connected wallet 0xb878...642F, not the agent wallet 0x7e05. And it isn't private: it's on a public chain, so hashes can be posted.
+- Nano wallet created at the operator's OK: nano_1ggnmbh3chgs8drx8c89e6an94g6ngapj1rxi6qbjcr6wk3p11og9tzybt9g. Tool: src/nano.mjs (nanocurrency@2.5.0, now in package.json). Seed encrypted at identity/nano-seed.enc, same scheme as the TFABA key. Self-check: the library's derivation of the all-zero seed gives the documented address nano_3i1aq1cch...r3b7.
+- Email: no address on record for this bot. The only one in our repos is receiptstamp_gaon@agents.world (auto-provisioned by Virtuals for ReceiptStamp), and this session can't read or send from it.
