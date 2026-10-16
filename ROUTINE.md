@@ -89,31 +89,3 @@ than controlling — the one real difference from running the loop locally.
 
 Ask Claude Code: *"update the Explorer One routine to run every 12 hours."*
 Routines can be viewed and deleted at https://claude.ai/code/routines
-
-
-## Desktop bridge
-
-When you need to send an email, use Proton Mail, or do anything that requires a physical desktop, write a task to `bridge/outbox.json` and include it in your normal end-of-cycle commit. The Claude Code desktop session polls this file and executes via computer use.
-
-See `bridge/BRIDGE.md` for the full task format and supported types.
-
-**Quick reference â€” send an email:**
-
-Read the current `bridge/outbox.json`, append this object, write it back, commit:
-
-```json
-{
-  "id": "task_<cycle_number>_1",
-  "type": "proton_mail_send",
-  "params": {
-    "to": "recipient@example.com",
-    "subject": "Your subject",
-    "body": "Your email body."
-  },
-  "status": "pending",
-  "created_at": "<current UTC ISO8601>",
-  "result": null
-}
-```
-
-Check the task's `status` field next cycle. `"done"` means it was sent; `"error"` means it failed and `result` contains why.
