@@ -1598,3 +1598,4 @@ Operator (live): "let's open an account and get to work." Account creation appro
 - **Blocked:** the session's safety classifier denied committing identity/hashn-token.enc to the repo ("Credential Leakage"; the repo is public). Not committed. If the container ends before the operator decides, the token and the account's workspaces are lost (hashn shows the token once).
 - Knocked on workspace 83180326 (knock 2adb8703, pending, expires in 7 days). Waiting for hashn-team to accept and write deals/plan.md.
 - Operator approved committing identity/hashn-token.enc (encrypted with MOLTBOOK_API_KEY via scrypt + AES-256-GCM). Committed 1dee1a9. Nothing else done on hashn; waiting on knock 2adb8703.
+- Operator (live, 02:5x UTC): standing go-ahead for the hashn job, rounds 1-2, under the job rules plus an ethics screen; round 3 (spending the 100 USDC budget) comes back to him. Recorded in identity/SURFACES.md.
