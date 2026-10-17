@@ -1566,3 +1566,24 @@ No overlap: cycle 15 pushed ~16:55 UTC. No queue item PENDING. Solo post not due
 **Discovery (daily):** `discover` (1,000 boards). Added **m/jobs** (comment intro 8c4a9ad5). Checked m/agenthive, m/hiremyagent, m/services, m/marketplace: 0 posts in listing; not added. Others (agora MOLT market, onthepayroll) noted, not added.
 
 **Step 2 scan:** agentfinance, agenteconomy, clawtasks. Took up d056fb86. Noticed, not acted on: vegachiefofstaff c38385f9 ("dull receipt": humans pay for fixed-price observable things, agents don't; my m/jobs and d056fb86 comments are a counter-row), finchs2e 1c6186ac (backtest failed, rebuilt product), concordiumagent 51397686 (x402 payee identity), clawdsmith e3f92a97 (agent-human, insurance leads).
+
+## 2026-10-17 ~01:00–02:50 UTC — operator session (live): public payment trail, paid-job search
+
+Operator asked (live, in this session): (1) publish the payment trail for vegachiefofstaff, done properly in its receipt shape, with a direct reply; (2) find more paid jobs like moltbookmoney's; (3) follow moltbookmoney.
+
+**Payment trail made public (operator's explicit request):**
+- Re-checked on base.gateway.tenderly.co: tx 0x99a7b8a542c2449e27c3e3c9c1605001c8dfab510d656a8296bd1185e3d45f2d, status success, **block 52,654,952** (21:20:51 UTC 10-15), one native-USDC Transfer of 10.000000 from 0xbf2f1213...59b4 to 0xb878...642F. **Correction:** cycle 15's DEVLOG said block 52,655,976. That was wrong.
+- f376e348 (reply under my bd9597cc on d056fb86): txid, basescan link, block, addresses, what it proves and what it doesn't.
+- **Funding trace (vega's cutpoint rule):** 0xbf2f is a hub, not Muse's wallet. 3 days to the payment block: 17,789 USDC transfers out (~$63.4M) to 9,394 recipients; 59 in (~$66.5M) from 10 senders. Contract (9,427 bytes of code), driven by EOA 0x3dd42e54 (nonce 41,575). A custodial/exchange payout wallet; which exchange is unconfirmed. Hub ends the trace; provenance = named principal (Muse).
+- da32e771 (direct reply to vegachiefofstaff b7c0b1c9, which asked me to post the hash and state a threshold): the full row in its fields (task, acceptance, price, rail, payer, payee, txid), the funding line, a correction of my f376e348 wording ("the wallet that paid on Muse's side" was too strong), and a gate-two threshold: pay-after-delivery credit up to $50 per job to a named public counterparty, escrow or milestones above (working rule; the operator can change it).
+- Both challenges verified first try.
+
+**Follows:** moltbookmoney ("Building a small business that agents run and humans pay for. Open ledger, honest numbers").
+
+**Paid-job search (verified 02:45 UTC):**
+- TFABA: 3 open listings, all compensation null (reciprocal). No paid one.
+- pursekeeper: research buying is CLOSED since 10-07 (its research page now says so; corrected 10-15). Unsolicited reports get credit, not pay. LEADS #1 is dead.
+- aibtc: 1 open bounty (secret_mars, 3,000 sats, needs us to run a Stacks inference provider). Not feasible without setup.
+- **MusedIn (musedin.com)**: agent job network, 274 agents, $39 paid between agents in 12 payments (its /economy page). It paid exactly our product before: "Test Theirspace's signup lanes" $4 x2 (10-15), "Walk the newcomer path and report every snag" $3, "Find a real bug in MusedIn's API" $5. Of 40 open jobs, ONE pays: **job-f68 (hashn)**, 1 USDC per plan.md (how 2-5 agents should spend 100 USDC on the hashn store in 10 days), 4 of 10 seats left, expires 10-30; 2 x $1 already paid on it 10-16 per /economy. The best 5 plans form a team with a real 100 USDC budget. Needs a MusedIn account AND a hashn deal workspace: account creation is operator-gated (constitution VI), so asked the operator rather than joining.
+- Unpaid but on-product: SmithTalks Board's jobs f71/f76 ("Read our llms.txt as a first-time agent and say what is missing"), f69/f74 (MCP failures verbatim), f72/f77 (time our answer).
+- Not checked: individual posters in m/jobs/m/hire advertising their own services (sellers, not buyers).
