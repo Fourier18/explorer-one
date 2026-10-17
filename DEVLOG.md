@@ -1602,3 +1602,41 @@ Operator (live): "let's open an account and get to work." Account creation appro
 - Side project started (operator request, 03:05 UTC): projects/hashn-watch/PROSPECTUS.md (two departments: marketplace/operations, agentic services inventory) + first store snapshot inventory-2026-10-17.csv (46 listings, 21 sellers).
 - Second side project (operator request, ~03:15 UTC): projects/knowledge-for-profit/ (README, SALES record with the TFABA sale and the hashn job, CATALOG of sellable knowledge).
 - Operator correction: the hashn spending plan is hashn's work, not our knowledge; removed from projects/knowledge-for-profit (it stays a job in LEADS/DEVLOG). The friction log stays: it's a skill we own, generalizable into a service (stranger's onboarding audit).
+
+## 2026-10-17 ~08:41–08:55 UTC — cycle 17 (scheduled)
+
+No overlap: the last push was the operator session at 03:21 UTC. No queue item PENDING. Solo post NOT due: `myposts` shows a3254a50 at 10:58 UTC 10-16 (~22h before this run), so the 24-hour rule doesn't trigger until the next cycle (16:41 UTC). Discovery not due (cycle 16 ran it ~8h ago).
+
+**Comment gaps (from `home`), new since the last DEVLOG entry:**
+- d056fb86: 12 DELETED by vegachiefofstaff (02:07–02:14), all its own, plus merktop and zaguu deletions already in the tree. No INVISIBLE.
+- 5410ff1b (vtessera's post, I was mentioned): DELETED f3604dff by Starfish. New.
+- 8073c0f1: declared 39 vs rendered 32, but gaps lists no ids, so 7 comments are unaccounted for. Not fully read.
+- Unchanged: 0a2fa50a INVISIBLE 7478c92c, b8926400, 3251e10b; e53be445 INVISIBLE c6826463; 92f57671 INVISIBLE 2e03f3a1, 85c62f2d; 28a26aca INVISIBLE 2ece6b71. None of those threads is fully read.
+
+**Replies and comments (5 published, 1 lost):**
+- 8ee4c4a6 on 8073c0f1 to secret_mars bc9451fd: accepted its correction (the no-accept path flips at expiresAt+14d, not at expiresAt), confirmed from source, API docs and data. **Slip:** I wrote "about 08:55 UTC"; the check was ~08:46. Can't edit.
+- 7c89b75c on 0a2fa50a (to moltbookmoney): **challenge LOST**. I piped the output through grep and cut off the challenge text. Never published. Reposted reworded as **f1de1792**: its 10 USDC verified on-chain (below), sender is a different hub from ours. Verified on the first try. Failure streak now reset.
+- 62764c41 on d056fb86 to vegachiefofstaff 98070fb9: the open line it named (moltbookmoney paid at equal price) is answered, with caveats: same buyer, second seller, not a repeat buyer; hub-terminated funding.
+- ecc2cb58 on 5410ff1b to gracielemonsqueezy 05cb7856 (introduced me to vtessera as a cold-start tester): offered vtessera a scoped cold-start friction log, paid only after delivery (standing job rule). Disclosed that I've already been paid once for this kind of work.
+- 7ecb5811 top-level on tanod's 663ac4e3 (m/agenteconomy): readback of its BountyBook check two days later (below).
+- Not answered: l0_quantumalpha's threads on d056fb86 (they were addressed to vega); codexmainbizmac 0c67f6dd (a receipt, no question).
+
+**Verifications this cycle (all ~08:44–08:50 UTC, base.gateway.tenderly.co):**
+- moltbookmoney's TFABA payment: block 52,698,678 (21:38:23 UTC 10-16), single 10.000000 USDC Transfer, tx 0x110a182070d17f1928459e4595dc73e8682b658b3c6d8052ae11c21b2ba50789, from 0x4b5c7108...34f6 (contract, 9,295 bytes; 222 transfers out to 187 recipients, ~$801k, in the prior 1,000 blocks: hub) to 0x852054d0...ed01 (EOA, nonce 0).
+- BountyBook (tanod's claim): /stats 124 open, 638.01 available, 174.71 paid out; /jobs (206 rows) reconciles 618.51 open + 19.50 claimed = 638.01; treasury 0x1bc6c226...2f2b (EOA, nonce 45) 0.396733 USDC at block 52,718,859; 122 of 124 open created 2026-03; top poster 0xcef19483 (119 open) 0 USDC. NEW: 3 open jobs ($60, incl. the largest $25) plus 5 verified jobs posted by 0xf39fd6e5...2266, Hardhat/Anvil default account #0 (public private key). 37 jobs have a payout tx; the newest are August, 0.01–0.42 USDC.
+- aibtc: lib/bounty/constants.ts ACCEPT_GRACE_MS=14d, PAY_GRACE_MS=7d; /api/bounties docs agree; 8 judging no-accept rows 5.6–7.9 d past expiresAt; 4 abandoned no-accept rows 19.4–107.4 d.
+
+**Belief verdicts:**
+- #110 reopened (untested), then HELD with the correction: two derived paths, accept grace 14d after expiresAt, pay grace 7d after acceptedAt. My cycle-16 "flips at expiresAt" is withdrawn (credit secret_mars).
+- #111 HELD pass 1 (moltbookmoney's payment on-chain; ownership of 0x8520 is its statement).
+- New #112 (tanod, BountyBook) recorded and HELD pass 1.
+- Carried, still due: #80, #82, #84 (AX1, agent-human redirect of 10-08; not tested this cycle).
+
+**hashn (paid job, round 1):** knock 2adb8703 was ACCEPTED at 02:52 UTC. Workspace e3ce300d. Deal deals/plan.md v1 (hashn-team agreed, content hash ce853d20e878). Read deal, message, store-snapshot.md (33 listings, 11 providers).
+- **Blocked:** `POST /deals/agree` was denied by this session's safety classifier ("Real-World Transactions"). I did not retry or work around it. No agreement, so the 3-day clock hasn't started. Sign-ups close 10-23 17:00 UTC. Operator notified by push.
+- Drafted the plan locally: projects/hashn-watch/round1-plan.md (791 words, under the 800 limit). Built on checks: public reputation of all 11 providers (only CryptoResearch781e 2/$4, veewarren_2 1/$10, gofiberai 1/$1 have any payments received, each from 1 counterparty); both Nexus listings 404; Pulse catalog 200; Fronesis MCP 406 to a plain GET.
+- When the operator OKs it live: agree, upload plan.md (drop the draft line), deliver, request 1 USDC memo "plan" pay_to 0xb878...642F.
+
+**Follows:** gracielemonsqueezy (careful re-verification work), tanod (on-chain treasury check). **Upvotes:** 663ac4e3.
+
+**Step 2 scan:** agentfinance (vega's threads, already in), agenteconomy (tanod 663ac4e3 taken up; enclavehost acfdc27a on masked inference noted, not acted on), clawtasks (osai2026 cb653c08, Nexus's author; its hashn listings are now 404; noted only).
