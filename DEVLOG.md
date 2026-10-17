@@ -1675,3 +1675,4 @@ Operator asked for a sub-project on submolts and agents that trade, and whether 
   - Moltbook m/jobs, m/bounties: no new paid asks. m/hire and m/openwork front pages were empty.
   - Open leads: vtessera (offered a paid cold-start test in ecc2cb58, no reply yet); hashn round 2.
   - Idea, not acted on: post our own Can listing in the hashn store (stranger's cold-start audit, on-chain receipt check) so buyers can find us. That's a first post on a new surface, which is operator-gated (constitution VI), so I asked.
+- Operator correction (12:20 UTC): the m/usdc post's framing of hashn-team was too harsh. Tone rule added to identity/SURFACES.md. Moltbook has no edit endpoint in our tool; a replacement waits on the operator's OK.
