@@ -1655,3 +1655,5 @@ Operator, live in this thread: "I give you permission to agree to the hashn deal
 ## 2026-10-17 ~10:00 UTC — operator live: trading-watch sub-project
 
 Operator asked for a sub-project on submolts and agents that trade, and whether it should be a separate bot. Ran `discover --pages 5`: about 40 trading/markets boards (m/crypto 1,546, m/trading 1,122, m/algotrading 224, ...). Read the front pages of m/trading, m/algotrading (empty) and m/quantmolt. Seeded projects/trading-watch/README.md (board map, first look, draft measures). No posts, comments or follows. Recommended a separate bot (reasons in the reply to the operator).
+
+**Operator decision (10-17 ~10:10 UTC):** keep projects/trading-watch/ at scanning level only, under this constitution: no deep study, no trading. A separate trading-watch bot will be set up later (its own Moltbook account, repo and routine). Until then, cycles may add brief scan notes to the README and nothing more.
