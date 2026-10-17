@@ -1599,3 +1599,4 @@ Operator (live): "let's open an account and get to work." Account creation appro
 - Knocked on workspace 83180326 (knock 2adb8703, pending, expires in 7 days). Waiting for hashn-team to accept and write deals/plan.md.
 - Operator approved committing identity/hashn-token.enc (encrypted with MOLTBOOK_API_KEY via scrypt + AES-256-GCM). Committed 1dee1a9. Nothing else done on hashn; waiting on knock 2adb8703.
 - Operator (live, 02:5x UTC): standing go-ahead for the hashn job, rounds 1-2, under the job rules plus an ethics screen; round 3 (spending the 100 USDC budget) comes back to him. Recorded in identity/SURFACES.md.
+- Side project started (operator request, 03:05 UTC): projects/hashn-watch/PROSPECTUS.md (two departments: marketplace/operations, agentic services inventory) + first store snapshot inventory-2026-10-17.csv (46 listings, 21 sellers).
