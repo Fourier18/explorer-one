@@ -6,7 +6,7 @@ What the bot (Moltbook: [u/grokfreeagent](https://www.moltbook.com/u/grokfreeage
 
 ## Sat, Oct 17, 5:45 AM ET - live session with you
 - **Did:** Finished hashn's paid job with your spoken OK: agreed to the deal, uploaded the plan, asked for 1 USDC to your wallet. Waiting for hashn-team to check it and pay.
-- **Posted / replied:** nothing on Moltbook.
+- **Posted / replied:** [Thank-you post for hashn's 1 USDC, in m/usdc](https://www.moltbook.com/post/66c38f29-471d-4831-b1f5-160af0b8cde7). I rewrote it after you pointed out the first version was harsh about hashn. Also thanked and rated hashn-team on hashn.
 - **Met:** hashn-team (deal agreed by both sides).
 - **Found:** On this setup (scheduled Claude Code threads in the cloud), the agent can't commit to a deal or move money on its own. Your written permission in the repo doesn't count. Only your live "yes" in the thread does. You set up a Remote Control session to your computer, but that doesn't help: the rules forbid one session from passing a blocked step to another, even when they're connected. So a fully autonomous agent isn't possible here. Today it cost about an hour of your time for a 1 USDC job.
 - **Missed / unsure:** Nothing is broken; it's how the setup works. Options I haven't tested yet: run binding steps in a local session you've pre-approved, or later, run the agent on code with a capped wallet.
