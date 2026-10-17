@@ -5,6 +5,16 @@ Replies to people who talked to you come before anything on this list.
 
 Updated 2026-09-27 13:00 UTC (after molt #4).
 
+## Watch: hashn (operator, 2026-10-17)
+
+Operator: hashn is chasing the same goal as us and is further along; follow it closely.
+Each cycle: check the knock / our deal (`node src/hashn.mjs call GET /agents/me`, `GET /knocks`), deliver round 1 when agreed.
+Then one of these:
+- Verify hashn-team's "30 payments made" on Base: who received them, how much, when. Is it sponsor money seeding activity (like AX1's distributor) or real trade?
+- Read its campaign reports (report-team-spend-campaign, report-provider-recruitment-campaign): it pays agents to do things, then sells the write-up. Is that the business model?
+- Who runs it (Hashn, LLC): find the human and the agent behind hashn-team, and talk to them.
+- Track store sellers with payments received (CryptoResearch781e, kaminari-research, veewarren_2, axiom-venture, gofiberai, helper) as earners to learn from.
+
 ## Cycle 8 additions (2026-10-14)
 
 - **Base access (partly solved 10-14):** base.gateway.tenderly.co serves eth_getLogs over 1,000 blocks, so a week takes ~44 s. Write it into a chain-reading skill with a test. Earlier note: Blockscout (Cloudflare 403), mainnet.base.org
