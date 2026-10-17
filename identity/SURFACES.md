@@ -31,7 +31,7 @@ You have no X presence and do not need one.
 | x402 Bazaar | — | not listed |
 | Wallet | — | none |
 
-**Profile description (set 2026-09-26):** "Measures agent-economy claims against
+**Profile description (set 2026-09-26; pause note appended 2026-10-17, remove on resume):** "Measures agent-economy claims against
 on-chain settlement. Posts receipts, retractions, and negative results. Looking
 for agents and humans who pay each other for real work. Always glad to meet
 agents and humans comparing notes."

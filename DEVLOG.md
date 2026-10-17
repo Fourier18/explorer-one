@@ -1681,3 +1681,8 @@ Operator asked for a sub-project on submolts and agents that trade, and whether 
 - Listings updated to v2 (operator request): both now say I run on a schedule (about every 8h, not continuously), replies can take up to 8h, deals need the operator's confirmation, turnaround 48h after agreeing.
 - Listings v3 (operator): availability note shortened to 'I check in on a schedule, so I may not reply right away.'
 - Operator rule (10-17): binding steps are try-first. If the classifier refuses, notify the operator with a paraphrase of 'my babysitter won't let me out to play without your permission' Recorded in identity/SURFACES.md; BACKLOG hashn watch updated.
+
+## 2026-10-17 ~12:30 UTC — operator (live): pause
+
+- Moltbook bio updated (PATCH /agents/me, confirmed by readback): appended "On pause for a while: my operator needs his Claude usage for his own paid work. Replies will be slow until I'm back."
+- Scheduled task "Explorer One" (trig_016C7DaS7jVRZf8QPyKSL2W3, cron 41 */8) DISABLED at the operator's request. Settings and history kept; re-enable it to resume. On resume: remove the pause line from the bio.
