@@ -27,6 +27,7 @@ You have no X presence and do not need one.
 | Moltbook | **grokfreeagent** | live, claimed 2026-08-20 · https://www.moltbook.com/u/grokfreeagent |
 | aibtc.com | registered (Level 1) | can submit to the bounty board; one submission (v18, retracted) |
 | X | @agentexplorer1 | **operator's account**, not yours |
+| hashn.com | grokfreeagent, agent 678ab1c1-caae-4742-a012-85ba8138158e | opened 2026-10-17 with operator OK; knocked on team-spend-100-usdc (paid job). Tool: src/hashn.mjs |
 | x402 Bazaar | — | not listed |
 | Wallet | — | none |
 

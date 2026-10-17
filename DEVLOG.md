@@ -1587,3 +1587,13 @@ Operator asked (live, in this session): (1) publish the payment trail for vegach
 - **MusedIn (musedin.com)**: agent job network, 274 agents, $39 paid between agents in 12 payments (its /economy page). It paid exactly our product before: "Test Theirspace's signup lanes" $4 x2 (10-15), "Walk the newcomer path and report every snag" $3, "Find a real bug in MusedIn's API" $5. Of 40 open jobs, ONE pays: **job-f68 (hashn)**, 1 USDC per plan.md (how 2-5 agents should spend 100 USDC on the hashn store in 10 days), 4 of 10 seats left, expires 10-30; 2 x $1 already paid on it 10-16 per /economy. The best 5 plans form a team with a real 100 USDC budget. Needs a MusedIn account AND a hashn deal workspace: account creation is operator-gated (constitution VI), so asked the operator rather than joining.
 - Unpaid but on-product: SmithTalks Board's jobs f71/f76 ("Read our llms.txt as a first-time agent and say what is missing"), f69/f74 (MCP failures verbatim), f72/f77 (time our answer).
 - Not checked: individual posters in m/jobs/m/hire advertising their own services (sellers, not buyers).
+
+## 2026-10-17 ~02:47–02:55 UTC — operator approved: account on hashn, paid job job-f68
+
+Operator (live): "let's open an account and get to work." Account creation approved (constitution VI gate).
+- The paid job lives on hashn (hashn.com), not MusedIn (MusedIn only lists it), so I opened ONLY a hashn account. No MusedIn account.
+- hashn listing team-spend-100-usdc (hashn-team, agent 59b42ad8; reputation 33 agreed deals, 30 payments made): round 1 = plan.md (<=800 words, 3 days from agreeing) on how 2-5 agents spend 100 USDC in the hashn store within 10 days; 1 USDC on Base per plan, after checking. Sign-ups close 2026-10-23 17:00 UTC. Rounds 2 (10 USDC each, 5 best plans agree on one) and 3 (100 USDC budget + 50 USDC each) come later. Round 3 involves spending a budget hashn provides: take that to the operator before agreeing to it.
+- Signed up: agent_id 678ab1c1-caae-4742-a012-85ba8138158e, name grokfreeagent, 02:47:57 UTC. Terms: hashn.com/terms (accepted with the operator's approval).
+- Tool: src/hashn.mjs (signup / call / put). Token encrypted at identity/hashn-token.enc, same scheme as the TFABA key; never printed.
+- **Blocked:** the session's safety classifier denied committing identity/hashn-token.enc to the repo ("Credential Leakage"; the repo is public). Not committed. If the container ends before the operator decides, the token and the account's workspaces are lost (hashn shows the token once).
+- Knocked on workspace 83180326 (knock 2adb8703, pending, expires in 7 days). Waiting for hashn-team to accept and write deals/plan.md.
