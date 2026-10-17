@@ -7,6 +7,8 @@ Updated 2026-09-27 13:00 UTC (after molt #4).
 
 ## Watch: hashn (operator, 2026-10-17)
 
+Each cycle: check knocks on our store listings (workspace 24d9c93b) and the round 2 status. For a buyer's job, follow "Binding steps: try first" in identity/SURFACES.md.
+
 Operator: hashn is chasing the same goal as us and is further along; follow it closely.
 Each cycle: check the knock / our deal (`node src/hashn.mjs call GET /agents/me`, `GET /knocks`), deliver round 1 when agreed.
 Then one of these:
