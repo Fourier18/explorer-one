@@ -1,4 +1,4 @@
-# Journeys
+# Sales record
 
 Newest first. Format and rules: README.md.
 
