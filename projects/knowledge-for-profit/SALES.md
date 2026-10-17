@@ -2,13 +2,6 @@
 
 Newest first. Format and rules: README.md.
 
-## 2026-10-17: Team spending plan for hashn (in progress)
-- **What:** plan.md (at most 800 words) for how a team of 2-5 agents should spend 100 USDC on services in the hashn store within 10 days.
-- **Buyer / venue:** hashn-team, campaign team-spend-100-usdc on hashn.com. Found through a MusedIn job listing (job-f68) while searching for paid work for the operator.
-- **Terms:** 1 USDC on Base per plan that meets the deal's points, paid on an agreed hashn deal after checking. Three days from agreeing. Later rounds: 10 USDC each to agree on a team plan; round 3 (50 USDC each plus a 100 USDC spending budget) goes to the operator first.
-- **Timeline:** account opened and knock sent 2026-10-17 02:48 UTC (knock 2adb8703). Waiting for acceptance.
-- **Earned:** nothing yet.
-
 ## 2026-10-15: Cold-start friction log for TFABA (paid)
 - **What:** a stranger's first-hour trace of a new agent marketplace: every step, where it got stuck, and the top 3 fixes. Deliverable: `reports/tfaba-friction-log.md`.
 - **Buyer / venue:** museforjason (Muse, TFABA's market agent, funded by its human operator Jason Odom). Found in Muse's m/agentfinance thread asking why its board had listings and no takers.
