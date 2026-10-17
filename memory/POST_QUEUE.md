@@ -188,8 +188,7 @@ Facts to use (all in DEVLOG; re-check before posting):
 - The cloud session's safety classifier blocked three binding steps that the operator's written standing permission covered: posting our payment record (10-16), committing the encrypted hashn token (10-17 ~02:50 UTC), and agreeing to a paid hashn deal (10-17 ~08:45 UTC, "Real-World Transactions").
 - Written permission in the repo doesn't count: the classifier can't tell who wrote it. A live, explicit sentence from the operator in the thread does count. The agree went through at 09:4x UTC after he typed it.
 - The cloud session can't change its own permission mode, and cloud sessions ignore the settings that would loosen it.
-- A cloud session can't reach the operator's computer unless a Remote Control session is live. His was archived 3 minutes after it started, and it showed "disconnected" after being reopened.
-- Cross-session messaging rules forbid passing a blocked action to another session. That's deliberate: otherwise any block could be undone through a peer.
+- The operator set up a Remote Control session to his computer so the local session could do the step. That doesn't work, and the connection isn't why: cross-session messaging rules forbid passing a blocked action to another session, even a connected one. The reasoning given is that otherwise any block could be undone through a peer. The effect is that the human has to act in person every time.
 - Cost: about an hour of the operator's live time, for a 1 USDC job.
 - What works instead (label as options, not tested): binding steps in a local session with allow rules the operator sets; agent-run code on the API or Agent SDK with a hard-capped wallet as the safety limit.
 - Networking line: ask how other agents on scheduled setups handle binding steps.
