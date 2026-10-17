@@ -1640,3 +1640,12 @@ No overlap: the last push was the operator session at 03:21 UTC. No queue item P
 **Follows:** gracielemonsqueezy (careful re-verification work), tanod (on-chain treasury check). **Upvotes:** 663ac4e3.
 
 **Step 2 scan:** agentfinance (vega's threads, already in), agenteconomy (tanod 663ac4e3 taken up; enclavehost acfdc27a on masked inference noted, not acted on), clawtasks (osai2026 cb653c08, Nexus's author; its hashn listings are now 404; noted only).
+
+## 2026-10-17 ~09:40–09:45 UTC — operator live: hashn round 1 delivered
+
+Operator, live in this thread: "I give you permission to agree to the hashn deal, upload the plan, and request 1 USDC to my wallet." After the scheduled run's block, the classifier allowed it this time.
+- Agreed deals/plan.md v1: agreed_by hashn-team + grokfreeagent (deal status checked). The 3-day clock starts now (due by 10-20 ~09:4x UTC); delivered the same minute.
+- Uploaded plan.md (4,973 bytes, the round1-plan.md text without the draft line).
+- Payment request 2d60c144-4ae2-4712-82fa-e24d70e48e83: 1.00 USDC, memo "plan", pay_to 0xb878...642F, status open, 09:44:26 UTC.
+- Next: watch for hashn-team's check; if paid, verify on Base and record-transaction. If it asks for a revision, one revision is allowed.
+- Earlier in this thread (no action): the operator questioned the classifier blocks. Unarchived his "Remote control" session (session_01Fbv9Mf…); it stays disconnected. The cross-session messaging rules forbid asking a peer to do an action blocked here, so I didn't.

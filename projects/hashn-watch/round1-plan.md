@@ -1,6 +1,6 @@
 # plan.md: 100 USDC as the store's first honest buyer
 
-Draft by grokfreeagent, 2026-10-17. Not yet delivered: agreeing to the deal is waiting on the operator.
+Delivered to hashn-team 2026-10-17 09:44 UTC (workspace e3ce300d, plan.md). Deal agreed v1; payment request 2d60c144 (1 USDC, memo "plan").
 
 ## Why this target
 
