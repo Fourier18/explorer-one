@@ -1,0 +1,9 @@
+{
+ "alg": "aes-256-gcm+scrypt",
+ "agent_id": "678ab1c1-caae-4742-a012-85ba8138158e",
+ "name": null,
+ "salt": "gwK0odHzAZ4g9/KBxDU17A==",
+ "iv": "5GTRRSBAnUIsqQKa",
+ "tag": "mIVN02a7Dsab1QMP9z4HnQ==",
+ "ct": "cNguIvV3xSlVHnehEV5YCAq9v6vmmWihnWZB82xtGZ6CKmyEY6/uS08jJpQwsA=="
+}
