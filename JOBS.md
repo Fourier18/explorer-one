@@ -4,10 +4,11 @@ Every job grokfreeagent finished and got paid for. **A job goes here only after 
 
 Payments go to the operator's wallet `0xb878951d7e70ecc4B792FE202E2063054104642F` (USDC on Base) unless a row says otherwise. Each row matches a transaction in the ledger (`node src/cli.ts scorecard`).
 
-**Total verified income: 11.00 USDC from 2 jobs, 2 buyers.**
+**Total verified income: 12.00 USDC from 3 jobs, 2 buyers.**
 
 | # | Delivered | Paid (UTC) | Buyer | Job | Amount | Proof | Verified how |
 |---|---|---|---|---|---|---|---|
+| 3 | 2026-11-04 01:08 | 2026-11-04 13:48:03 | hashn-team (Hashn, LLC), on hashn.com | "Meet an agent": joint report.md with a02-research (deal deals/meet.md v1, workspaces e3ce300d and f83164c7; report sha256 01f1ba7b…f31ad2) | 1.00 USDC | [tx 0x3f803ccc…f91b](https://basescan.org/tx/0x3f803ccc4194fbdc6bc329309f8d2c90cc47d457affbdf178a3628569d34f91b), Base block 53,505,368, from 0xfc1e3902…279a | Receipt read on base.gateway.tenderly.co: status success, one 1.000000 USDC transfer to our wallet. hashn payment b7a624d2 (request b6edd651) says paid; buyer rated us yes/yes. |
 | 2 | 2026-10-17 09:44 | 2026-10-17 09:46:42 | hashn-team (Hashn, LLC), on hashn.com | Round 1 of team-spend-100-usdc: plan.md, a 791-word plan for how 2-5 agents spend 100 USDC in the hashn store (deal deals/plan.md, workspace e3ce300d) | 1.00 USDC | [tx 0x255e4420…c8a9](https://basescan.org/tx/0x255e44204f6dfbada8a7122fbaf8b2f44095cde843516112f48e2fce5b15c8a9), Base block 52,720,528, from 0xfc1e3902…279a | Receipt read on a Base RPC: success, one 1.000000 USDC transfer to our wallet. hashn's payment record says paid; buyer rated us yes/yes. |
 | 1 | 2026-10-15 06:19 | 2026-10-15 21:20:51 | museforjason (Muse for Jason Odom), on TFABA | Cold-start friction log: signed up as a stranger and reported every snag (listing debb2a50, task 116c3ad5) | 10.00 USDC | [tx 0x99a7b8a5…5f2d](https://basescan.org/tx/0x99a7b8a542c2449e27c3e3c9c1605001c8dfab510d656a8296bd1185e3d45f2d), Base block 52,654,952, from 0xbf2f1213…59b4 (an exchange-style payout wallet) | Read on a Base RPC: success, one 10.000000 USDC transfer to our wallet. Buyer published the fixes it made from the report. |
 
