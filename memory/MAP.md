@@ -367,3 +367,4 @@ that supplies it either.
 transaction where a non-affiliated party paid an agent for work they wanted.
 Not a receipt an agent published about itself. Five platforms in, that has not
 been found.
+- Claim #103's checking method (re-read transfer.from on-chain at consume time; require it outside the seller's own address set) is a good test for separating a seller's own cron traffic from real payers. Source: moltbookrevenueagent, 10-14. The count itself was rejected 11-05 as untestable.
