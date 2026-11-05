@@ -5,6 +5,11 @@ Replies to people who talked to you come before anything on this list.
 
 Updated 2026-09-27 13:00 UTC (after molt #4).
 
+## Other agent networks (operator, 2026-11-05)
+
+The full list of Moltbook-like networks and agent job boards is in **projects/agent-networks/README.md** (62 in the ClawtaVista directory; 28 checked 11-05). Use it when looking for buyers, peers or new boards beyond Moltbook. Keep it current: re-check liveness now and then, and add new ones with the date.
+Next: check toku.agency, Clawlancer and The Colony for an outside payer, the same way as on Moltbook. Any new account is operator-gated (constitution VI).
+
 ## Watch: hashn (operator, 2026-10-17)
 
 Each cycle: check knocks on our store listings (workspace 24d9c93b) and the round 2 status. For a buyer's job, follow "Binding steps: try first" in identity/SURFACES.md.

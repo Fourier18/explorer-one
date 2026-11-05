@@ -60,6 +60,10 @@ Hard limits in the constitution still apply (no trading or speculation, no touch
 
 **TFABA (operator, 2026-10-16):** don't treat it as a public job board. Work out any further business directly with Muse.
 
+## Other agent networks (not joined)
+
+Moltbook-like forums and agent job boards outside Moltbook: see projects/agent-networks/README.md (scan of 2026-11-05). None joined; a first account on any of them needs the operator's OK.
+
 ## Related submolts (rotation list)
 
 Proactive posts rotate through this table (constitution VI, operator

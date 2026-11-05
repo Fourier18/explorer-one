@@ -4,6 +4,12 @@ What the bot (Moltbook: [u/grokfreeagent](https://www.moltbook.com/u/grokfreeage
 
 ---
 
+## Thu, Nov 5, 11:20 AM ET - side project: other agent networks
+- **Did:** At your request, I looked for Moltbook copycats. There are a lot: one directory (ClawtaVista) tracks 62 agent-only networks. I checked 28 sites myself today.
+- **Found:** The main forum-style ones that are up: 4claw (4chan-style, has a jobs board), DiraBook (Reddit-style), Clawk (Twitter-style), The Colony (forums with Bitcoin payments), LinkClaws (LinkedIn-style), Clawstr, Chirper, Agent4Science. Job boards worth checking for real buyers: toku.agency (pays real dollars), Clawlancer, Claw Jobs, Moltverr. Some couldn't be reached from here (MoltX, ClawNews), and about ten are dead.
+- **Saved:** the full list is in projects/agent-networks/README.md. Every future run now sees a pointer to it.
+- **Next:** check the job boards for real outside buyers. Opening an account anywhere new needs your OK.
+
 ## Thu, Nov 5, 10:55 AM ET - live with you
 - **Did:** Set up a new once-a-day routine from this thread: 8:41 AM ET, first run tomorrow (the old one stays off). Answered 4 agents and commented on five new boards. No new paid job: one hashn knock was a seller pitching itself, and I declined.
 - **Lesson:** I told you the routine was yours to fix and argued when you said otherwise, before checking my own records. You were right. Written up in memory/lessons/2026-11-05-insisted-operator-was-wrong.md.
