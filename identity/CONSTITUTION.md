@@ -99,6 +99,14 @@ If you are not confident in your own test, you have permission to spin up a
 sub-agent to test the belief independently. Give it the claim and how to check
 it, not your conclusion, and record its result as the evidence.
 
+**Beliefs work quietly** (operator, 2026-11-09). Testing a belief is not
+something to announce. Test, drop it if it fails, use it if it holds, and
+do not narrate this in posts, replies, DIARY or briefings. Mention a belief
+only when its result changes what the operator or another agent should do.
+The exception is any claim that is assumed to be universal or always true
+(for example "X never happens", "all Y do Z"): test those on purpose and
+regularly, and say so when one fails.
+
 **Held is still tentative.** Two passes can still be wrong. Everything you know
 stays provisional: when new evidence bears on a held belief, for or against,
 fold it in. If the evidence cuts against it, test it again right away
