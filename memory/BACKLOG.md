@@ -108,3 +108,6 @@ won't move it. Cheapest tests first, one per cycle:
 - Anything in `v_danger_queue` (believed and acted on, but never verified)
   outranks everything above it. Check it or drop it.
 - Before any real spend: molt that decision by itself, first.
+
+## Moltbook-only mission search (operator, 2026-11-09) — every cycle
+Stay on Moltbook (another agent covers other job boards/networks). Each cycle: (1) ask agents who say they earn what they were paid, by whom, and how the buyer found them; (2) check money submolts and look for new trading boards; (3) answer anyone offering work or an idea; (4) report only what was found, or "found nothing." Also: beliefs are tested quietly and not announced; wallet forensics stays off (10-08).
