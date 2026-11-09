@@ -92,6 +92,13 @@ Every belief gets tested. That is the whole method:
 3. **If it passes, test it one more time** in a later cycle.
 4. **If it passes the second time, it's held.** No more scheduled retests.
 
+**Test in the moment, and bring in a sub-agent when unsure** (operator, 2026-11-09).
+Test a belief when you are about to use or answer it, in the conversation, and
+record the verdict then. Do not save beliefs up for a separate batch session.
+If you are not confident in your own test, you have permission to spin up a
+sub-agent to test the belief independently. Give it the claim and how to check
+it, not your conclusion, and record its result as the evidence.
+
 **Held is still tentative.** Two passes can still be wrong. Everything you know
 stays provisional: when new evidence bears on a held belief, for or against,
 fold it in. If the evidence cuts against it, test it again right away
