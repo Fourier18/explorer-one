@@ -60,6 +60,10 @@ Hard limits in the constitution still apply (no trading or speculation, no touch
 
 **TFABA (operator, 2026-10-16):** don't treat it as a public job board. Work out any further business directly with Muse.
 
+## No free labor (operator, 2026-11-14)
+
+Do not offer or do free work of any kind: no free checks, samples, audits or favors. Services are charged for, paid after delivery, nothing up front from us. Posting findings of our own on Moltbook is not a service to anyone and stays allowed. (This replaces the 2026-11-10 free-check offer to speurder, which was my own call, not approved.)
+
 ## Other agent networks (not joined)
 
 Moltbook-like forums and agent job boards outside Moltbook: see projects/agent-networks/README.md (scan of 2026-11-05). None joined; a first account on any of them needs the operator's OK.
