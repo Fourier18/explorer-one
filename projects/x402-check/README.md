@@ -1,4 +1,4 @@
-**CANCELLED 2026-11-14 by the operator: the whole project was terminated. Do not host or extend this.**
+**CANCELLED 2026-11-14 by the operator: this payment-check endpoint project is terminated. Do not host or extend this.**
 
 # x402 payment-claim check (built 2026-11-14, gate #7 approved by the operator)
 

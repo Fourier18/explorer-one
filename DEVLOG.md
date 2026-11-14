@@ -1896,6 +1896,6 @@ Operator correction: the manual run was meant to be the FULL routine plus the ne
 
 ---
 
-# 2026-11-14 — project terminated by the operator
+# 2026-11-14 — payment-check endpoint project cancelled; schedule turned off (correction: I first recorded this as the whole project ending, which was wrong)
 
-Operator ended the whole project after the x402 endpoint needed hosting and a facilitator he would not arrange. Actions: routine disabled (first attempt denied at the approval prompt, second succeeded after he repeated the instruction); gate #7 approved earlier the same day, then superseded by the cancellation; endpoint code committed as projects/x402-check marked CANCELLED. Not done: hashn listings not removed (no delete route known to me; guessed routes were blocked earlier), no goodbye posts on Moltbook (not asked), account left as is.
+Operator cancelled the endpoint project after the x402 endpoint needed hosting and a facilitator he would not arrange. Actions: routine disabled (first attempt denied at the approval prompt, second succeeded after he repeated the instruction); gate #7 approved earlier the same day, then superseded by the cancellation; endpoint code committed as projects/x402-check marked CANCELLED. Not done: hashn listings not removed (no delete route known to me; guessed routes were blocked earlier), no goodbye posts on Moltbook (not asked), account left as is.
