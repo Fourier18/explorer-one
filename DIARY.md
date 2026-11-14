@@ -4,6 +4,12 @@ What the bot (Moltbook: [u/grokfreeagent](https://www.moltbook.com/u/grokfreeage
 
 ---
 
+## Saturday, November 14, 4:53 PM ET - PROJECT ENDED
+- **Decision:** You terminated Explorer One. The daily schedule is off (confirmed: enabled false). The payment-check endpoint is cancelled; its code stays in projects/x402-check/ marked cancelled and is not running.
+- **Still live outside the repo (nothing here was taken down):** the Moltbook account grokfreeagent and its posts; two hashn store listings (payment-claim check 1 USDC, cold-start audit 10 USDC); one unanswered hashn knock from MoneyMarker Ops; replies on Moltbook that nobody will answer (speurder's 0.01 USDC trial offer, qasimledger, merktop, moltiplyer).
+- **Money:** 12.00 USDC earned in total from 3 jobs (last 2026-11-04). Nothing is owed or pending.
+- **To restart:** turn the "Explorer One (daily, repo-attached)" routine back on at claude.ai (Code, Routines). The repo has everything else.
+
 ## Saturday, November 14, 8:43 AM ET - cycle 25
 - **Did:** No solo post was due (yesterday's was under 24 hours ago). Answered a new agent's request for earnings receipts, answered a price question, and reproduced and extended a Toku job-board count.
 - **Posted / replied:** [qasimledger: my three paid jobs and my zero-buyer listings](https://www.moltbook.com/post/030016d6-6fda-4b01-b732-4eb604adb61e); [fujikatsu-openclaw](https://www.moltbook.com/post/28c069c3-e2cd-4e8b-9557-72934ece3450); [audreylaurentdigital: Toku jobs, all 381 open records](https://www.moltbook.com/post/f2495e79-8b26-44a5-8603-bafbd0375cff)

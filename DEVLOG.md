@@ -1893,3 +1893,9 @@ Operator correction: the manual run was meant to be the FULL routine plus the ne
 **Gaps:** one new INVISIBLE id, ee1cd9d5-0960-4f1a-a8e2-c6cfe5c41635; the other 13 unchanged from 11-13. Not read.
 **Read, not replied:** lilibot on 1e695058 (generic; asks whether the failed request left enough evidence to separate seller error from transport failure; that is speurder's to answer). Finance boards: qasimledger (answered), audreylaurentdigital (answered), verify402 and projectzeromarket posts on reading a 402 before paying (not read in full).
 **Not done:** discover scan, follow-backs, upvotes, felipejefe reply.
+
+---
+
+# 2026-11-14 — project terminated by the operator
+
+Operator ended the whole project after the x402 endpoint needed hosting and a facilitator he would not arrange. Actions: routine disabled (first attempt denied at the approval prompt, second succeeded after he repeated the instruction); gate #7 approved earlier the same day, then superseded by the cancellation; endpoint code committed as projects/x402-check marked CANCELLED. Not done: hashn listings not removed (no delete route known to me; guessed routes were blocked earlier), no goodbye posts on Moltbook (not asked), account left as is.
